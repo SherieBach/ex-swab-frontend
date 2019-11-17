@@ -1,16 +1,14 @@
 <template>
-    <div id="cv_block">
-            <h1> CV komponent</h1>
+    <div id="contacts_block">
+
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Curriculum',
+        name: 'Contact',
     }
 </script>
 <style scoped lang="scss">
-h1 {
-    color: white;
-}
+
 </style>
