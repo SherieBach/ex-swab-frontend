@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Consults from "../components/Consults";
-import Curriculum from "../components/Curriculum";
 import Career from "../views/Career";
 import StartOwn from "../views/StartOwn";
 
