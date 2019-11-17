@@ -1,16 +1,14 @@
 <template>
-    <div id="cv_block">
-            <h1> CV komponent</h1>
+    <div>
+<h1> 404 Something went wrong </h1>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Curriculum',
+        name: 'NotFound',
     }
 </script>
 <style scoped lang="scss">
-h1 {
-    color: white;
-}
+
 </style>
