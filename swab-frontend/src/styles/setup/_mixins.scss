@@ -5,6 +5,11 @@
   @content;
  }
 }
+
+@mixin mobile {
+ @media (min-width: #{$mobile}) {
+ }
+}
       /* @include desktop{
 
        }
