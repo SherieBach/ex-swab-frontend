@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   annotations:
     field.cattle.io/creatorId: u-tdmv2omtu4
-    field.cattle.io/publicEndpoints: >-
-      [{"addresses":["188.166.134.219"],"port":443,"protocol":"HTTPS","serviceName":"swabweb-test:nginx","ingressName":"swabweb-test:do-managed--softwarelse--se","hostname":"do-managed.softwarelse.se","allNodes":false},{"addresses":["188.166.134.219"],"port":443,"protocol":"HTTPS","serviceName":"swabweb-test:nginx","ingressName":"swabweb-test:test-softwarelse-se","hostname":"test.softwarelse.se","allNodes":false}]
   labels:
     cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-swabweb-test-nginx
