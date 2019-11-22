@@ -6,12 +6,12 @@ on:
       - develop
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-18.04
 
     steps:
-    - name: Install requirements
+    - name: deploy
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       run: |
@@ -23,4 +23,4 @@ jobs:
         echo "Putting kubecfg in /tmp/config:"
         echo "$KUBE_CONFIG_DATA" | base64 --decode > /tmp/config
         echo "Contents of /tmp/config:"
-        cat /tmp/config
+        kubectl --kubeconfig /tmp/config rollout restart -n swabweb-test deployment nginx
