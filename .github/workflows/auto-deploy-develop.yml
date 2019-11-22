@@ -1,7 +1,4 @@
-on: 
-  push:
-    branches: 
-      - develop
+on: []
 name: auto-deploy-deploy
 jobs:
   deploy:
