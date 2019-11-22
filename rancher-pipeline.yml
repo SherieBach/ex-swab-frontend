@@ -1,7 +1,0 @@
-﻿stages:
-- name: deploy
-  steps:
-  - applyYamlConfig:
-      path: ./deployment-definition.test-env.yml
-timeout: 60
-notification: {}
