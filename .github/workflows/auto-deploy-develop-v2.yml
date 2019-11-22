@@ -22,5 +22,4 @@ jobs:
         sudo mv ./kubectl /usr/local/bin/kubectl
         echo "Putting kubecfg in /tmp/config:"
         echo "$KUBE_CONFIG_DATA" | base64 --decode > /tmp/config
-        echo "Contents of /tmp/config:"
         kubectl --kubeconfig /tmp/config rollout restart -n swabweb-test deployment nginx
