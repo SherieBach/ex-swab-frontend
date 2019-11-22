@@ -4,16 +4,16 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false;
+/*
 
-/* Not done, connect to router and store
 router.beforeEach((to, from, next) => {
-  const { allEvents } = store.state.assets;
-  console.log('main beforeEach – allevents:', allEvents);
+  const { allContent } = store.state.content;
+  console.log('main beforeEach – allContent:', allContent);
 
-  if (allEvents.length === 0) {
-    store.dispatch('loadEventsFromJSON')
-        .then( () => {
-          console.log('main had no data so we loaded it:', store.state.assets.allEvents);
+  if (allContent.length === 0) {
+    store.dispatch('getAllJSONContent')
+        .then(() => {
+          console.log('main had no json so we loaded it:', store.state.content.allContent);
           next()
         })
   } else {
@@ -21,6 +21,7 @@ router.beforeEach((to, from, next) => {
   }
 });
 */
+
 
 new Vue({
   router,
