@@ -17,6 +17,5 @@ jobs:
       run: |
         curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.2/bin/linux/amd64/kubectl
         chmod +x ./kubectl
-        sudo mv ./kubectl /usr/local/bin/kubectl
         echo "$KUBE_CONFIG_DATA" | base64 --decode > /tmp/config
-        kubectl --kubeconfig /tmp/config rollout restart -n swabweb-test deployment nginx
+        ./kubectl --kubeconfig /tmp/config rollout restart -n swabweb-test deployment nginx
