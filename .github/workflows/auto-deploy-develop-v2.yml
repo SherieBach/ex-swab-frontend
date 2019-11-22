@@ -13,8 +13,8 @@ jobs:
     steps:
     - name: Install requirements
       run: |
-        apt update
-        apt install -y build-essential dnsutils wget git curl tree
-        curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.2/bin/linux/amd64/kubectl
-        chmod +x ./kubectl
-        mv ./kubectl /usr/local/bin/kubectl
+        sudo apt update
+        sudo apt install -y build-essential dnsutils wget git curl tree
+        sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.2/bin/linux/amd64/kubectl
+        sudo chmod +x ./kubectl
+        sudo mv ./kubectl /usr/local/bin/kubectl
