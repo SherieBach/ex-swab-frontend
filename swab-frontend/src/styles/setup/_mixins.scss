@@ -1,16 +1,29 @@
 @import "variables";
+@import "breakpoints";
 
-@mixin desktop {
- @media (min-width: #{$desktop}) {
+@mixin sm {
+ @media (min-width: #{$screen-sm-min}) {
   @content;
  }
 }
 
-@mixin mobile {
- @media (min-width: #{$mobile}) {
+// Medium devices
+@mixin md {
+ @media (min-width: #{$screen-md-min}) {
+  @content;
  }
 }
-      /* @include desktop{
 
-       }
-*/
+// Large devices
+@mixin lg {
+ @media (min-width: #{$screen-lg-min}) {
+  @content;
+ }
+}
+
+// Extra large devices
+@mixin xl {
+ @media (min-width: #{$screen-xl-min}) {
+  @content;
+ }
+}
