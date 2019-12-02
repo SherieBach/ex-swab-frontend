@@ -6,47 +6,76 @@
                 <img src="../assets/images/gabriel.jpg">
                 <p v-for="text in this.getCVContent.cv.introText">{{text}}</p>
             </div>
-
-            <div class="cv__card-comp">
-                <h1>Key competencies</h1>
-                <ul v-for="competence in this.getCVContent.cv.keyCompetencies">
-                    <li>{{competence}}</li>
-                </ul>
-            </div>
-            <div class="cv__card-skills">
-                <h1>Skills</h1>
-                <div v-for="skill in this.getCVContent.cv.skills">
-                    <h4>{{skill.category}}</h4>
-                    <ul v-for="skillName in skill.bulletPoints">
-                        <li>{{skillName}}</li>
-                    </ul>
+             <div class="cv__card-comp">
+                 <h1>Key competencies</h1>
+                 <ul v-for="competence in this.getCVContent.cv.keyCompetencies">
+                     <li>{{competence}}</li>
+                 </ul>
+             </div>
+              <div class="cv__card-skills">
+                 <h1>Skills</h1>
+                 <div v-for="skill in this.getCVContent.cv.skills">
+                     <h4>{{skill.category}}</h4>
+                     <ul v-for="skillName in skill.bulletPoints">
+                         <li>{{skillName}}</li>
+                     </ul>
+                 </div>
+             </div>
+               <div class="cv__card-techs">
+                  <h1>TECHNOLOGIES</h1>
+                   <table>
+                       <tr v-for="tech in this.getCVContent.cv.technologies">
+                           <th>{{tech.category}}</th>
+                           <td>
+                               {{tech.names.join(", ")}}
+                           </td>
+                       </tr>
+                   </table>
+              </div>
+                <div class="cv__card-method">
+                     <h1>METHODOLOGIES</h1>
+                     <div>
+                         <span> {{this.getCVContent.cv.methodologies.join(", ")}}</span>
+                     </div>
+                 </div>
+                <div class="cv__card-history">
+                     <h1>Employment history</h1>
+                     <div v-for="company in this.getCVContent.cv.workExperience">
+                         <h4>{{company.contractVia}}</h4>
+                         <span v-for="time in company.timespan"> {{time.month}} {{time.year}}</span>
+                         <h3>{{company.companyInfo.name}}</h3>
+                         <h4>The company</h4>
+                         <span>{{company.companyInfo.description}}</span>
+                         <h4>My roles</h4>
+                         <span>{{company.roles[0]}}</span>
+                         <h4>Technical environment</h4>
+                         <span>{{company.technicalEnvironment[0]}}</span>
+                         <h4>Achievement Highlights</h4>
+                         <div v-for="achievements in company.achievementHighlights">
+                             <p>{{achievements}}</p>
+                         </div>
+                     </div>
+                 </div>
+            <div class="cv__card-personalDetails">
+                <h2>Education</h2>
+                <div v-for="bar in this.getCVContent.cv.education">
+                    <span> {{bar.school}} - {{bar.degree}}</span>
                 </div>
-            </div>
-            <div class="cv__card-techs">
-                <h1>TECHNOLOGIES</h1>
-                <table v-for="techs in this.getCVContent.cv.technologies">
-                    <tr v-for="techName in techs.names">
-                        <th>{{techs.category}}</th>
-                        <td>{{techName}}</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="cv__card-method">
-                <h1>METHODOLOGIES</h1>
-                <div v-for="method in this.getCVContent.cv.methodologies">
-                    <span>{{method}}</span>
+                <h2>Interest</h2>
+                <div v-for="interests in this.getCVContent.cv.interests">
+                    <span> {{interests}}</span>
                 </div>
-            </div>
-            <div class="cv__card-history">
-                <h1>Employment history</h1>
-                <div v-for="company in this.getCVContent.cv.workExperience">
-                    <h4>{{company.contractVia}}</h4>
-                    <span v-for="time in company.timespan"> {{time.month}} {{time.year}}</span>
-                    <h3>{{company.companyInfo.name}}</h3>
-                    <h4>The company</h4>
-                    <span>{{company.companyInfo.description}}</span>
-
-
+                <h2>Personal Details</h2>
+                <div v-for="details in this.getCVContent.cv.personalDetails">
+                    <span> {{details}}</span>
+                </div>
+                <h2>Language</h2>
+                <div v-for="lang in this.getCVContent.cv.languages">
+                    <span> {{lang}}</span>
+                </div>
+                <h2>References</h2>
+                <div v-for="ref in this.getCVContent.cv.references">
+                    <span> {{ref}}</span>
                 </div>
             </div>
         </div>
@@ -80,6 +109,7 @@
     #cv {
         color: black;
         background-color: white;
+
 
 
         .cv__card {
@@ -136,7 +166,6 @@
                     }
 
                     td {
-                        word-wrap: break-word;
                     }
 
                     th {
