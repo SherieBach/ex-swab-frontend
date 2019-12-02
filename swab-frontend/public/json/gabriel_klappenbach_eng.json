@@ -20,7 +20,8 @@
       {
         "category": "Software engineering",
         "bulletPoints": [
-          "Long experience within classical Java development with the Spring stack, Domain Driven Design and relational databases.",
+          "Long experience within classical Java development with the Spring stack",
+          "Domain Driven Design and relational databases.",
           "Functional programming using Scala and NOSQL databases.",
           "History of advocating clean code and descriptive, easy to grasp tests.",
           "Comfortable with TDD, leading to quality code with good test coverage."
@@ -30,8 +31,8 @@
         "category": "Leadership",
         "bulletPoints": [
           "Very good verbal as well as written communication skills.",
-          "Experienced scrum master, not afraid to resolve team conflicts.",
-          "Understands team dynamics.",
+          "Experienced scrum master, not afraid to resolve team conflicts",
+          "Understands team dynamics",
           "Strong pedagogical skills."
         ]
       }
@@ -40,13 +41,31 @@
       {
         "category": "languages",
         "names": [
-          "Java, Scala"
+          "Java",
+          "Scala"
         ]
       },
       {
         "category": "tools",
         "names": [
-          "Spring, OracleDB, Cassandra, Postgres, Spark, Kafka, Elastic Search, Finagle, Junit, Mockito, Git, SBT, Maven, Docker, Mesos, Aurora, Apiary, RAML"
+          "Spring",
+          "OracleDB",
+          "Cassandra",
+          "Postgres",
+          "Spark",
+          "Kafka",
+          "Elastic Search",
+          "Finagle",
+          "Junit",
+          "Mockito",
+          "Git",
+          "SBT",
+          "Maven",
+          "Docker",
+          "Mesos",
+          "Aurora",
+          "Apiary",
+          "RAML"
         ]
       },
       {
@@ -58,12 +77,20 @@
       {
         "category": "platforms",
         "names": [
-          "Mac, Windows, Linux"
+          "Mac",
+          "Windows",
+          "Linux"
         ]
       }
     ],
     "methodologies": [
-      "Scrum, Kanban, TDD, BDD, DDD, mob programming, pair programming"
+      "Scrum",
+      "Kanban",
+      "TDD",
+      "BDD",
+      "DDD",
+      "mob programming",
+      "pair programming"
     ],
     "workExperience": [
       {
@@ -127,18 +154,9 @@
           "Postgres"
         ],
         "achievementHighlights": [
-          "Took over sole responsibility for the Scala backend service handling iOS",
-          [
-            "Drastically improved it by tuning and fixing numerous issues and introducing monitoring with New Relic."
-          ],
-          [
-            "Started a department wide “Better APIs” initiative to improve all the APIs of our services as they were severely lacking in quality",
-            "making monitoring errors impossible."
-          ],
-          [
-            "Raised the general standard of development and practices in this young development organisation by being a driving force",
-            "demanding that we set the bar higher for what we find an acceptable status quo."
-          ]
+          "Took over sole responsibility for the Scala backend service handling iOS, drastically improved it by tuning and fixing numerous issues and introducing monitoring with New Relic.",
+          "Started a department wide “Better APIs” initiative to improve all the APIs of our services as they were severely lacking in quality, making monitoring errors impossible.",
+          "Raised the general standard of development and practices in this young development organisation by being a driving force, demanding that we set the bar higher for what we find an acceptable status quo."
         ]
       }
     ],
@@ -149,12 +167,15 @@
         "degree": "MSc, specializing in Intelligent Interactive Systems, a Computer Science branch."
       }
     ],
-    "interests": "Hacking home automation, science, martial arts, fitness.",
+    "interests": [
+      "Hacking home automation",
+      "science",
+      "martial arts",
+      "fitness"
+    ],
     "personalDetails": [
       "Living with wife and dog in Kungsholmen",
-      [
-        "Age 40"
-      ]
+      "Age 40"
     ],
     "languages": [
       "Swedish (native)",
