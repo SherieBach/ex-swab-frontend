@@ -1,0 +1,189 @@
+{
+  "cv": {
+    "firstName": "Gabriel",
+    "lastName": "Klappenbach",
+    "profileImage": "url",
+    "address": {
+      "street": "Lustgårdsgatan 1"
+    },
+    "introText": [
+      "With over 10 years in the business, Gabriel is an experienced developer devoted to producing clean and simple solutions, while also bringing out the most of each member in the team.",
+      "While the bulk of his experience comes from backend development on the JVM, he has experience from front end development as well.",
+      "He is comfortable in the scrum master role and has experience as a product owner."
+    ],
+    "keyCompetencies": [
+      "Solid developer with great people skills.",
+      "Excellent communicator who understands how to talk to both technical and business audiences.",
+      "Pragmatic approach to challenges, focusing on value first in an agile manner."
+    ],
+    "skills": [
+      {
+        "category": "Software engineering",
+        "bulletPoints": [
+          "Long experience within classical Java development with the Spring stack",
+          "Domain Driven Design and relational databases.",
+          "Functional programming using Scala and NOSQL databases.",
+          "History of advocating clean code and descriptive, easy to grasp tests.",
+          "Comfortable with TDD, leading to quality code with good test coverage."
+        ]
+      },
+      {
+        "category": "Leadership",
+        "bulletPoints": [
+          "Very good verbal as well as written communication skills.",
+          "Experienced scrum master, not afraid to resolve team conflicts",
+          "Understands team dynamics",
+          "Strong pedagogical skills."
+        ]
+      }
+    ],
+    "technologies": [
+      {
+        "category": "languages",
+        "names": [
+          "Java",
+          "Scala"
+        ]
+      },
+      {
+        "category": "tools",
+        "names": [
+          "Spring",
+          "OracleDB",
+          "Cassandra",
+          "Postgres",
+          "Spark",
+          "Kafka",
+          "Elastic Search",
+          "Finagle",
+          "Junit",
+          "Mockito",
+          "Git",
+          "SBT",
+          "Maven",
+          "Docker",
+          "Mesos",
+          "Aurora",
+          "Apiary",
+          "RAML"
+        ]
+      },
+      {
+        "category": "environments",
+        "names": [
+          "IntelliJ"
+        ]
+      },
+      {
+        "category": "platforms",
+        "names": [
+          "Mac",
+          "Windows",
+          "Linux"
+        ]
+      }
+    ],
+    "methodologies": [
+      "Scrum",
+      "Kanban",
+      "TDD",
+      "BDD",
+      "DDD",
+      "mob programming",
+      "pair programming"
+    ],
+    "workExperience": [
+      {
+        "companyInfo": {
+          "name": "Spotify",
+          "description": "Spotify is a music streaming service that gives users access to millions of songs, videos and podcasts from all over the world. The service is offered globally and has over 248 million monthly active users."
+        },
+        "contractVia": "Softwarelse",
+        "timespan": {
+          "from": {
+            "year": "2019",
+            "month": "11"
+          }
+        },
+        "roles": [
+          "Java/Scala Developer"
+        ],
+        "technicalEnvironment": [
+          "Microservices",
+          "Java",
+          "Maven",
+          "Git",
+          "JSON",
+          "Protobuf",
+          "Kuberernetes",
+          "Postgres"
+        ],
+        "achievementHighlights": []
+      },
+      {
+        "companyInfo": {
+          "name": "Nordic Choice Hotels",
+          "description": "Nordic Choice Hotels is one of the largest hotel chains in Scandinavia with over 200 hotels in Scandinavia and the Baltics.",
+          "logoUrl": "nordic_choice.png"
+        },
+        "contractVia": "Softwarelse",
+        "timespan": {
+          "from": {
+            "year": "2018",
+            "month": "12"
+          },
+          "to": {
+            "year": "2019",
+            "month": "11"
+          }
+        },
+        "roles": [
+          "Scala Developer"
+        ],
+        "technicalEnvironment": [
+          "Microservices",
+          "Scala",
+          "Playframework",
+          "SBT",
+          "Git",
+          "JSON",
+          "Heroku",
+          "New Relic",
+          "Slick",
+          "Redis",
+          "Postgres"
+        ],
+        "achievementHighlights": [
+          "Took over sole responsibility for the Scala backend service handling iOS, drastically improved it by tuning and fixing numerous issues and introducing monitoring with New Relic.",
+          "Started a department wide “Better APIs” initiative to improve all the APIs of our services as they were severely lacking in quality, making monitoring errors impossible.",
+          "Raised the general standard of development and practices in this young development organisation by being a driving force, demanding that we set the bar higher for what we find an acceptable status quo."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "school": "Royal Institute of Technology (KTH)",
+        "schoolLogo": "url",
+        "degree": "MSc, specializing in Intelligent Interactive Systems, a Computer Science branch."
+      }
+    ],
+    "interests": [
+      "Hacking home automation",
+      "science",
+      "martial arts",
+      "fitness"
+    ],
+    "personalDetails": [
+      "Living with wife and dog in Kungsholmen",
+      "Age 40"
+    ],
+    "languages": [
+      "Swedish (native)",
+      "English",
+      "Spanish"
+    ],
+    "references": [
+      "References are available upon request."
+    ]
+  }
+}

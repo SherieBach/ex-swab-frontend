@@ -1,0 +1,38 @@
+{
+  "companyName": "Softwarelse",
+  "companyDescription": {
+    "paragraphs": [
+      "Softwarelse is a consultant company",
+      "We take assignments in the Stockholm area",
+      "We work with technologies such as..."
+    ]
+  },
+  "consultants": [
+    {
+      "href": "cv/gabriel_klappenbach_eng.json"
+    }
+  ],
+  "career":{
+    "paragraphs": [
+      "Start working for us....",
+      "Lorem ipsum 2",
+      "Lorem ipsum 3"
+    ]
+  },
+  "startYourOwn":{
+    "paragraphs": [
+      "Softwarelse can help you transition from employed to being your own...",
+      "The transition model we provide gives you full freedom to....",
+      "After some time, you are free to make the full transition with help from us...."
+    ]
+  },
+  "contactInfo": {
+    "email": "admin@softwarelse.se",
+    "companyAddress": {
+      "ref": "Softwarelse AB c/o Kjölhede",
+      "street": "Görlaslingan 3F",
+      "zipcode": 76141,
+      "city": "Norrtälje"
+    }
+  }
+}

@@ -1,16 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Consults from "../components/Consults";
+import Consults from "../components/Consultants";
 import Career from "../views/Career";
 import StartOwn from "../views/StartOwn";
+import NotFound from "../views/NotFound";
+import store from "../store/modules/content";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path:'/404',
-    name:'NotFound',
+    name:'notfound',
+    component: NotFound
   },
   {
     path: '/',
@@ -19,24 +22,33 @@ const routes = [
     meta: { hideNavigation: true }
   },{
     path: '/career',
-    name: 'Career',
+    name: 'career',
     component: Career,
     meta: { hideNavigation: true }
   },{
     path: '/startown',
-    name: 'StartOwn',
+    name: 'startown',
     component: StartOwn,
     meta: { hideNavigation: true }
   },
   {
     path: '/consults', // :name
-    name: 'Consults',
+    name: 'consults',
     component: Consults,
-    meta: { hideNavigation: true }
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    beforeEnter: (to, from, next) => {
+      /* const event = store.state.content.allContent;
+       console.log(event);
+       if (!event) {
+         next('/404')
+       } else {
+         next()
+       }
+     }*/
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    }
   }
 ];
 
