@@ -25,7 +25,7 @@ const actions = {
         const response = await axios.get('../json/gabriel_klappenbach_eng.json');
         console.log("second response set", response);
         const cvData = response.data;
-        console.log("fetched cv ", cvData);
+        //console.log("fetched cv ", cvData);
         commit('setCvData', cvData);
     }
 };
