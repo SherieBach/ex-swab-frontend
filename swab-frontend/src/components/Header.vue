@@ -1,9 +1,9 @@
 <template>
     <div id="header">
         <div class="bgImage">
-            <img src="../assets/images/Bar.png" class="bar-menu">
-            <img src="../assets/images/softwarelse.png" class="logo">
-            <img src="../assets/images/mouse-alt.png" class="mouse-scroll">
+            <img src="../assets/images/Bar.png" class="bar-menu" alt="menu bar">
+            <img src="../assets/images/softwarelse.png" class="logo" alt="softwarelse logo">
+            <img src="../assets/images/mouse-alt.png" class="mouse-scroll"  alt="">
         </div>
         <nav>
             <router-link to="/">Home</router-link>
@@ -45,7 +45,7 @@
                             180deg,
                             rgba(2, 0, 36, 0.024247198879551846) 40%,
                             rgba(0, 0, 0, 0.8169642857142857) 92%),
-            url("../assets/images/joel-filipe-_AjqGGafofE-unsplash 2@x2.jpg") no-repeat center;
+            url("../assets/images/joel-filipe-sm.jpg") no-repeat center;
             background-size: cover;
             margin: 0;
             height: 56%;
