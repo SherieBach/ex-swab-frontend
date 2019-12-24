@@ -1,22 +1,34 @@
 <template>
-  <div class="home">
+  <div id="home">
     <About />
-    <Consults />
+    <Footer />
+    <CurriculumLink />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import CurriculumLink from "../components/CurriculumLink";
 import About from "../components/About";
-import Consults from "../components/Consultants";
 import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import Navigation from "../components/Navigation";
 
 export default {
   name: 'home',
   components: {
+    Navigation,
+    Footer,
     Hero,
-    Consults,
     About,
+    CurriculumLink // note to self used to be consultants
   }
 }
 </script>
+<style scoped lang="scss">
+
+  #home {
+    margin:0;
+  }
+
+</style>

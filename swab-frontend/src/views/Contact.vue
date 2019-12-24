@@ -1,6 +1,6 @@
 <template>
     <div id="contacts_block">
-
+        <h2>Contact page</h2>
     </div>
 </template>
 

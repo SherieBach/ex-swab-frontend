@@ -1,9 +1,12 @@
 <template>
-    <div id="about">
-        <div v-if="this.getAllContent" class="about__content">
-            <h1>Who we are</h1>
-            <span>{{this.getAllContent.companyName}}</span>
-            <div v-for="item in this.getAllContent.companyDescription.paragraphs">
+    <div v-if="this.getAllContent" id="about"> <!-- setting a v-if directive to check if all content is loaded -->
+        <hr>
+        <div>
+            <h1>About us</h1>
+        </div>
+        <div class="about__content">
+            <span></span>
+            <div v-for="item in this.getAllContent.companyDescription.paragraphs"> <!-- adding a v-for directive to loop out the paragraphs-->
                 <p>{{item}}</p>
             </div>
         </div>
@@ -12,7 +15,6 @@
 
 <script>
     import {mapActions, mapGetters} from 'vuex';
-    import store from "../store/modules/content";
 
     export default {
         name: 'About',
@@ -29,7 +31,7 @@
         },
         created() {
             console.log("calling json content ", this.getAllContent);
-            this.loadAllJSONContent();
+            this.loadAllJSONContent(); // calling the action from store to get all content
 
         }
     }
@@ -37,17 +39,31 @@
 
 <style scoped lang="scss">
     #about {
-        margin-top: 20px;
         display: flex;
-        justify-content: center;
-        border: 1px red solid;
-        height: 300px;
-        width: 100%;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    h1 {
         color: white;
+        text-align: center;
+    }
+
+    hr {
+        width: 70%;
+        margin: 5% auto;
+        border-color: white;
+        background-color: black;
+        opacity: 0.5;
     }
 
     .about__content {
+        height: 150px;
+        width: auto;
+        color: white;
+        text-align: left;
+        border: 1px solid grey;
+        border-radius: 5px;
         padding: 20px;
-        border: lightgrey solid 1px;
     }
 </style>
