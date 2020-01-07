@@ -2,12 +2,16 @@ import axios from 'axios';
 
 const state = {
     allContent: undefined,
-    cvContent: undefined
+    cvContent: undefined,
+    isNavOpen: false
 };
 const mutations = {
     setData: (state, content) => (state.allContent = content),
-    setCvData: (state, cvData) => (state.cvContent = cvData)
+    setCvData: (state, cvData) => (state.cvContent = cvData),
+    setIsNavOpen: (state) => (state.isNavOpen = state),
+    toggleNav() { state.isNavOpen = !state.isNavOpen; }
 };
+
 const actions = {
 
     async loadAllJSONContent({ commit }) { // get all data
