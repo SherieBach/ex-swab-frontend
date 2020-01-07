@@ -1,6 +1,14 @@
 @import "variables";
 @import "breakpoints";
 
+@mixin flex($flexDir: row, $justify: center, $align: center, $flow: row) {
+ display: flex;
+ flex-flow: $flow ;
+ flex-direction: $flexDir;
+ justify-content: $justify;
+ align-items: $align;
+}
+
 @mixin sm {
  @media (min-width: #{$screen-sm-min}) {
   @content;
