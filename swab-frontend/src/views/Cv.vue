@@ -15,10 +15,10 @@
     }
 </script>
 <style scoped lang="scss">
+    @import "../styles/global";
+
     #Cv {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        @include flex($flexDir: column, $justify: space-around);
         width: 100%;
         height: auto;
         margin: 10px;
