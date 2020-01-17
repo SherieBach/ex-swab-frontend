@@ -1,27 +1,40 @@
 @import "variables";
 @import "breakpoints";
 
+@mixin border(){
+ border-top-style: groove;
+ border-bottom-style: groove;
+ border-width: thin;
+ border-color: $aquaWhite;
+}
+
+@mixin flex($flexDir: row, $justify: center, $align: center, $flow: row, $flexWrap: wrap) {
+ display: flex;
+ flex-flow: $flow ;
+ flex-direction: $flexDir;
+ justify-content: $justify;
+ align-items: $align;
+ flex-wrap: $flexWrap;
+}
+
 @mixin sm {
  @media (min-width: #{$screen-sm-min}) {
   @content;
  }
 }
 
-// Medium devices
 @mixin md {
  @media (min-width: #{$screen-md-min}) {
   @content;
  }
 }
 
-// Large devices
 @mixin lg {
  @media (min-width: #{$screen-lg-min}) {
   @content;
  }
 }
 
-// Extra large devices
 @mixin xl {
  @media (min-width: #{$screen-xl-min}) {
   @content;

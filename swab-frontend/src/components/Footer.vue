@@ -1,6 +1,5 @@
 <template>
     <footer>
- <h3>FOOTER</h3>
     </footer>
 </template>
 
@@ -11,11 +10,13 @@
 </script>
 <style scoped lang="scss">
     footer{
+        margin: 0;
         height: 40px;
         width: 100%;
-        background-color: white;
+        background-color: black;
     }
 h3 {
-    color: white;
+    color: black;
+    margin: 0;
 }
 </style>

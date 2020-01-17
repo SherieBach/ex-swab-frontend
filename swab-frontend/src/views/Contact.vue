@@ -1,10 +1,9 @@
 <template>
-    <div id="career">
-<h2>This is career page</h2>
-        <div class="career-content">
-            <div v-for="item in this.getAllContent.companyDescription.paragraphs"> <!-- adding a v-for directive to loop out the paragraphs-->
-                <p>{{item}}</p>
-            </div>
+    <div id="contact">
+        <h2>Contact page</h2>
+        <div class="contact-content">
+            <h2>{{this.getAllContent.companyName}}</h2>
+            <span>Contact us <a href="mailto:admin@softwarelse.se">@softwarelse</a> </span>
         </div>
     </div>
 </template>
@@ -13,7 +12,7 @@
     import {mapActions, mapGetters} from 'vuex';
 
     export default {
-        name: 'Career',
+        name: 'Contact',
         methods: {
             ...mapActions([
                 'loadAllJSONContent',
@@ -32,14 +31,12 @@
     }
 </script>
 <style scoped lang="scss">
-
     @import "../styles/global";
 
-    #career {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        margin: auto;
+    #contact {
+        @include flex($flexDir: column, $justify: space-around);
+
+
         h2 {
             color: $aquaWhite;
             font-size: 2em;
@@ -47,7 +44,7 @@
             text-transform: uppercase;
         }
 
-        .career-content {
+        .contact-content {
             height: 150px;
             width: auto;
             color: $aquaWhite;
@@ -55,6 +52,11 @@
             border: 1px solid grey;
             border-radius: 5px;
             padding: 20px;
+
+            span, a {
+                text-transform: uppercase;
+                color: $aquaWhite;
+            }
         }
     }
 </style>

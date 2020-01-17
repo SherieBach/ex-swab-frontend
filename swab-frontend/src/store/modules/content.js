@@ -1,23 +1,26 @@
 import axios from 'axios';
 
 const state = {
-    defaultState: "laddar",
     allContent: undefined,
-    cvContent: undefined
+    cvContent: undefined,
+    isNavOpen: false
 };
 const mutations = {
     setData: (state, content) => (state.allContent = content),
-    setCvData: (state, cvData) => (state.cvContent = cvData)
+    setCvData: (state, cvData) => (state.cvContent = cvData),
+    setIsNavOpen: (state) => (state.isNavOpen = state),
+    toggleNav() { state.isNavOpen = !state.isNavOpen; }
 };
+
 const actions = {
 
-    async loadAllJSONContent({ commit }) {
+    async loadAllJSONContent({ commit }) { // get all data
         console.log("request response");
         const response = await axios.get('../json/content_eng.json');
         console.log("get response", response);
         const content = response.data;
         console.log("get all json from response", content);
-        commit('setData', content);
+        commit('setData', content); // adding data to mutations for setting the state
 
     },
     async loadSingleCvFromJson({ commit }){
@@ -30,12 +33,11 @@ const actions = {
     }
 };
 const getters = {
-    getAllContent(state) {
+    getAllContent(state) {  // getting all of the content
         return state.allContent;
     },
     getCVContent(state){
         return state.cvContent;
-      //  console.log("getCV", state.cvContent)
     }
 };
 

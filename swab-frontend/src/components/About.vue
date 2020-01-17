@@ -1,9 +1,10 @@
 <template>
-    <div id="about">
-        <div v-if="this.getAllContent" class="about__content">
-            <h1>Who we are</h1>
-            <span>{{this.getAllContent.companyName}}</span>
-            <div v-for="item in this.getAllContent.companyDescription.paragraphs">
+    <div v-if="this.getAllContent" id="about"> <!-- setting a v-if directive to check if all content is loaded -->
+        <div>
+            <h1>About us</h1>
+        </div>
+        <div class="about-content">
+            <div v-for="item in this.getAllContent.companyDescription.paragraphs"> <!-- adding a v-for directive to loop out the paragraphs-->
                 <p>{{item}}</p>
             </div>
         </div>
@@ -12,11 +13,9 @@
 
 <script>
     import {mapActions, mapGetters} from 'vuex';
-    import store from "../store/modules/content";
 
     export default {
         name: 'About',
-
         methods: {
             ...mapActions([
                 'loadAllJSONContent',
@@ -29,25 +28,37 @@
         },
         created() {
             console.log("calling json content ", this.getAllContent);
-            this.loadAllJSONContent();
+            this.loadAllJSONContent(); // calling the action from store to get all content
 
         }
     }
 </script>
 
 <style scoped lang="scss">
+    @import "../styles/global";
+
+
     #about {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        border: 1px red solid;
-        height: 300px;
-        width: 100%;
-        color: white;
+        @include flex($flexDir: column);
+        margin: 20px;
+        background-color: $black;
     }
 
-    .about__content {
-        padding: 20px;
-        border: lightgrey solid 1px;
+    h1 {
+        color: $aquaWhite;
+        text-align: center;
     }
+
+    .about-content {
+        height: 150px;
+        width: auto;
+        color: $aquaWhite;
+        text-align: left;
+        border-top-style: groove;
+        border-bottom-style: groove;
+        border-width: thin;
+        border-color: $aquaWhite;
+        padding: 20px;
+    }
+
 </style>
