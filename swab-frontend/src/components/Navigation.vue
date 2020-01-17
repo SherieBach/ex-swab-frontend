@@ -11,11 +11,11 @@
                 <li>
                     <router-link to="/contact">Contact</router-link>
                 </li>
+             <!--   <li>
+                    <router-link to="/startown">Start own</router-link>
+                </li>-->
                 <li>
-                    <router-link to="/startown">Start up</router-link>
-                </li>
-                <li>
-                    <router-link :to="{ hash: '#consultants_block' }">Consultants</router-link>
+                    <router-link :to="{ hash: '#consultants_block'}">Consultants</router-link>
                 </li>
             </ul>
         </nav>
@@ -35,6 +35,8 @@
 
     #nav {
         position: relative;
+        font-size: 1.5em;
+        color: $aquaWhite;
 
         .fade-enter-active, .fade-leave-active {
             transition: opacity .5s;
@@ -43,39 +45,37 @@
         .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
         {
             opacity: 0;
+            min-height: 100%;
         }
 
         nav {
+            @include sm {
+                display: none;
+            }
             @include lg {
+                display: block;
             }
 
 
             ul {
-
-                display: flex;
-                justify-content: space-evenly;
+                @include flex($justify: space-evenly);
                 list-style: none;
-
                 padding: 0;
                 margin: 0 20px 0 0;
 
                 li {
                     padding: 2px 20px;
-                    cursor: pointer;
 
 
                     a {
                         font-weight: bold;
-                        color: white;
+                        color: $aquaWhite;
                         background-size: 100% 100%;
                         text-decoration: none;
-
-                        &:hover {
-                            color: #7ca971;
-                        }
+                        cursor: pointer;
 
                         &.router-link-exact-active {
-                            color: #42b983;
+                            text-decoration: underline;
                         }
 
                     }
