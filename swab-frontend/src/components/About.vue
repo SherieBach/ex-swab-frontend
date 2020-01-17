@@ -1,11 +1,9 @@
 <template>
     <div v-if="this.getAllContent" id="about"> <!-- setting a v-if directive to check if all content is loaded -->
-        <hr>
         <div>
             <h1>About us</h1>
         </div>
-        <div class="about__content">
-            <span></span>
+        <div class="about-content">
             <div v-for="item in this.getAllContent.companyDescription.paragraphs"> <!-- adding a v-for directive to loop out the paragraphs-->
                 <p>{{item}}</p>
             </div>
@@ -18,7 +16,6 @@
 
     export default {
         name: 'About',
-
         methods: {
             ...mapActions([
                 'loadAllJSONContent',
@@ -38,32 +35,30 @@
 </script>
 
 <style scoped lang="scss">
+    @import "../styles/global";
+
+
     #about {
-        display: flex;
-        flex-direction: column;
+        @include flex($flexDir: column);
         margin: 20px;
+        background-color: $black;
     }
 
     h1 {
-        color: white;
+        color: $aquaWhite;
         text-align: center;
     }
 
-    hr {
-        width: 70%;
-        margin: 5% auto;
-        border-color: white;
-        background-color: black;
-        opacity: 0.5;
-    }
-
-    .about__content {
+    .about-content {
         height: 150px;
         width: auto;
-        color: white;
+        color: $aquaWhite;
         text-align: left;
-        border: 1px solid grey;
-        border-radius: 5px;
+        border-top-style: groove;
+        border-bottom-style: groove;
+        border-width: thin;
+        border-color: $aquaWhite;
         padding: 20px;
     }
+
 </style>

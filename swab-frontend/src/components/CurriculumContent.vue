@@ -1,16 +1,20 @@
 <template>
     <div id="cv">
-        <div v-if="this.getCVContent" class="cv__card">
-            <h3>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h3>
-            <img src="../assets/images/gabriel.jpg" alt="A profile picture of the consultant">
-            <p v-for="text in this.getCVContent.cv.introText">{{text}}</p>
-            <div class="cv__card-comp">
+        <div v-if="this.getCVContent" class="cv-card">
+            <div class="cv-card--header">
+                <h3>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h3>
+                <img src="../assets/images/gabriel.jpg" alt="A profile picture of the consultant">
+            </div>
+            <div class="cv-card--intro">
+                <p v-for="text in this.getCVContent.cv.introText">{{text}}</p>
+            </div>
+            <div class="cv-card--comp">
                 <h2>Key competencies</h2>
                 <ul v-for="competence in this.getCVContent.cv.keyCompetencies">
                     <li>{{competence}}</li>
                 </ul>
             </div>
-            <div class="cv__card-skills">
+            <div class="cv-card--skills">
                 <h2>Skills</h2>
                 <div v-for="skill in this.getCVContent.cv.skills">
                     <h4>{{skill.category}}</h4>
@@ -19,7 +23,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="cv__card-techs">
+            <div class="cv-card--techs">
                 <h2>TECHNOLOGIES</h2>
                 <table>
                     <tr v-for="tech in this.getCVContent.cv.technologies">
@@ -30,13 +34,13 @@
                     </tr>
                 </table>
             </div>
-            <div class="cv__card-method">
+            <div class="cv-card--methods">
                 <h2>METHODOLOGIES</h2>
                 <div>
                     <span> {{this.getCVContent.cv.methodologies.join(", ")}}</span>
                 </div>
             </div>
-            <div class="cv__card-history">
+            <div class="cv-card--history">
                 <h2>Employment history</h2>
                 <div v-for="company in this.getCVContent.cv.workExperience">
                     <h4>{{company.contractVia}}</h4>
@@ -54,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cv__card-personalDetails">
+            <div class="cv-card--personalData">
                 <h2>Education</h2>
                 <div v-for="bar in this.getCVContent.cv.education">
                     <span> {{bar.school}} - {{bar.degree}}</span>
@@ -102,46 +106,39 @@
     }
 </script>
 <style scoped lang="scss">
+    @import "../styles/global";
 
     #cv {
+        @include flex($flexWrap: wrap, $justify: space-between);
         margin: 0;
-        color: white;
-        background-color: black;
+        color: $aquaWhite;
+        background-color: $black;
         text-decoration: none;
 
-
-        .cv__card {
-            display: flex;
-            flex-flow: wrap;
+        .cv-card {
+            @include border();
             margin: 10px;
-            border: solid grey 1px;
             padding: 10px;
-            border-radius: 5px;
-
-            a {
-                color: white;
-                text-decoration: none;
-            }
+            text-align: left;
 
             h3 {
                 font-size: 1.5em;
             }
 
-            .cv__card-viewBtn {
-                color: white;
-                font-size: 1em;
+            img {
+                align-content: center;
+                width: 200px;
+                height: auto;
+                padding: 20px;
             }
-                img {
-                    align-content: center;
-                    width: 200px;
-                    height: auto;
-                    padding: 20px;
-                }
+            .cv-card--header{
 
-            .cv__card-skills {
+            }
+            .cv-card--intro {
+
             }
 
-            .cv__card-comp {
+            .cv-card--comp {
                 margin: auto;
 
                 ul {
@@ -151,9 +148,10 @@
                 }
 
             }
+            .cv-card--skills {
+            }
 
-            .cv__card-techs {
-
+            .cv-card--techs {
                 table {
                     border-collapse: collapse;
                     table-layout: fixed;
@@ -162,7 +160,7 @@
 
                     table, td, th {
                         border-collapse: collapse;
-                        border: 1px solid white;
+                        border: 1px solid $aquaWhite;
                     }
 
                     td {
@@ -180,14 +178,12 @@
                     }
                 }
             }
+            .cv-card--methods{
+            }
+            .cv-card--history{
+            }
+            .cv-card--personalData {
+            }
         }
-    }
-
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity 0.25s ease-out;
-    }
-
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
     }
 </style>
