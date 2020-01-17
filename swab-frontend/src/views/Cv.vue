@@ -1,6 +1,6 @@
 <template>
     <div id="Cv">
-        <router-link to="/">Back</router-link>
+        <router-link to="/">HOMEPAGE</router-link>
         <CurriculumContent/>
     </div>
 </template>
@@ -21,20 +21,18 @@
         @include flex($flexDir: column, $justify: space-around);
         width: 100%;
         height: auto;
-        margin: 10px;
+        text-align: center;
 
         a {
             font-weight: bold;
-            color: white;
+            color: $aquaWhite;
             background-size: 100% 100%;
             text-decoration: none;
-            text-align: right;
+            text-transform: uppercase;
             padding: 2px 20px;
-            cursor: pointer;
 
-            &:hover {
-                color: #7ca971;
-            }
+            margin:20px;
+            cursor: pointer;
 
             &.router-link-exact-active {
                 color: #42b983;

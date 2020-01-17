@@ -1,12 +1,20 @@
 @import "variables";
 @import "breakpoints";
 
-@mixin flex($flexDir: row, $justify: center, $align: center, $flow: row) {
+@mixin border(){
+ border-top-style: groove;
+ border-bottom-style: groove;
+ border-width: thin;
+ border-color: $aquaWhite;
+}
+
+@mixin flex($flexDir: row, $justify: center, $align: center, $flow: row, $flexWrap: wrap) {
  display: flex;
  flex-flow: $flow ;
  flex-direction: $flexDir;
  justify-content: $justify;
  align-items: $align;
+ flex-wrap: $flexWrap;
 }
 
 @mixin sm {

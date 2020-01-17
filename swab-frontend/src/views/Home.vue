@@ -1,34 +1,55 @@
 <template>
-  <div id="home">
-    <About />
-    <Footer />
-    <CurriculumLink />
-  </div>
+    <div id="home" v-on:scroll="handleScroll" :class="{'fadeIn scrollAnimation': handledScroll}">
+
+        <About/>
+        <CurriculumLink/>
+        <Footer/>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import CurriculumLink from "../components/CurriculumLink";
-import About from "../components/About";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
-import Navigation from "../components/Navigation";
+    // @ is an alias to /src
+    import CurriculumLink from "../components/CurriculumLink";
+    import About from "../components/About";
+    import Footer from "../components/Footer";
+    import Navigation from "../components/Navigation";
 
-export default {
-  name: 'home',
-  components: {
-    Navigation,
-    Footer,
-    Hero,
-    About,
-    CurriculumLink // note to self used to be consultants
-  }
-}
+    export default {
+        name: 'home',
+        data(){
+            return{
+                scrollEvent: null,
+                handledScroll: false
+            }
+            },
+        components: {
+            Navigation,
+            Footer,
+            About,
+            CurriculumLink // note to self used to be consultants
+        },
+        methods: {
+            handleScroll(event) {
+                console.log(event, "scroll event");
+                this.handledScroll = true;
+                setTimeout(function(){ this.handledScroll = false; }, 1000);
+            }
+        },
+        created() {
+            window.addEventListener('scroll', this.handleScroll);
+        },
+        destroyed() {
+            window.removeEventListener('scroll', this.handleScroll);
+        }
+    }
 </script>
 <style scoped lang="scss">
 
-  #home {
-    margin:0;
-  }
+    @import "../styles/global";
+
+    #home {
+        margin: 0;
+
+    }
 
 </style>
