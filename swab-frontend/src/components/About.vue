@@ -43,21 +43,24 @@
 
     #about {
         @include flex($flexDir: column);
-        margin: 20px;
+        margin: 60px 10px 40px 10px;
         background-color: $black;
     }
 
     h1 {
+        margin-top: 40px;
         color: $aquaWhite;
         text-align: center;
+        text-transform: uppercase;
     }
 
     .about-content {
+        @include border();
         height: auto;
-        width: auto;
         color: $aquaWhite;
         text-align: left;
         padding: 20px;
+        margin: 33px;
     }
 
 </style>

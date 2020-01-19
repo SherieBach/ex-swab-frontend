@@ -1,9 +1,7 @@
 <template>
     <div id="home" v-on:scroll="handleScroll" :class="{'fadeIn scrollAnimation': handledScroll}">
-
         <About/>
         <CurriculumLink/>
-
     </div>
 </template>
 

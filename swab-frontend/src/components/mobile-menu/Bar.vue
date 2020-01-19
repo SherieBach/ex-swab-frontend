@@ -1,7 +1,7 @@
 <template>
     <div id="burger"
          :class="{ 'active' : isBurgerActive }"
-         @click.prevent="toggle">
+         @click.prevent="toggle"> <!--DOM click event handler, trigger toggle-->
         <button type="button" class="burger-button" title="Menu">
             <span class="burger-bar burger-bar--1"></span>
             <img src="../../assets/images/Bar.png" class="burger-bar--img" alt="A clickable menubar for mobile navigation">
@@ -21,12 +21,12 @@
                 'setIsNavOpen'
             ]),
             isBurgerActive() {
-                return store.state.isNavOpen;
+                return store.state.isNavOpen; // checking the and returning the state whenever the bar is clicked
             }
         },
         methods: {
             toggle() {
-                store.mutations.toggleNav();
+                store.mutations.toggleNav(); // sets the mutated state to true
             }
         }
     }
@@ -69,6 +69,7 @@
         transition: transform .6s cubic-bezier(.165, .84, .44, 1),
         opacity .3s cubic-bezier(.165, .84, .44, 1),
         background-color .6s cubic-bezier(.165, .84, .44, 1);
+        color: $aquaWhite;
     }
 
     .burger-bar--img {

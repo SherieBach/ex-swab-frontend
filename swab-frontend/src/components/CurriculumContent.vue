@@ -1,8 +1,8 @@
 <template>
     <div id="cv">
-        <div v-if="this.getCVContent" class="cv-card">
+        <div v-if="this.getCVContent" class="cv-card"> <!--if the data exists -->
             <div class="cv-card--header">
-                <h3>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h3>
+                <h1>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h1>
                 <img src="../assets/images/gabriel.jpg" alt="A profile picture of the consultant">
             </div>
             <div class="cv-card--intro">
@@ -43,8 +43,8 @@
             <div class="cv-card--history">
                 <h2>Employment history</h2>
                 <div v-for="company in this.getCVContent.cv.workExperience">
-                    <h4>{{company.contractVia}}</h4>
-                    <span v-for="time in company.timespan"> {{time.month}} {{" - " +time.year}}</span>
+<!--                    <h4>{{company.contractVia}}</h4>-->
+<!--                    <span v-for="time in company.timespan"> {{time.month}} {{" - " +time.year}}</span>  removed atm-->
                     <h3>{{company.companyInfo.name}}</h3>
                     <h4>The company</h4>
                     <span>{{company.companyInfo.description}}</span>
@@ -115,6 +115,10 @@
         background-color: $black;
         text-decoration: none;
 
+        h2, h3, h4 {
+            text-decoration: underline;
+        }
+
         .cv-card {
             @include border();
             margin: 10px;
@@ -132,14 +136,14 @@
                 padding: 20px;
             }
             .cv-card--header{
-
+                margin:15px;
             }
             .cv-card--intro {
-
+                margin:15px;
             }
 
             .cv-card--comp {
-                margin: auto;
+                margin:15px;
 
                 ul {
                     li {
@@ -149,9 +153,11 @@
 
             }
             .cv-card--skills {
+                margin:15px;
             }
 
             .cv-card--techs {
+                margin:15px;
                 table {
                     border-collapse: collapse;
                     table-layout: fixed;
@@ -179,10 +185,13 @@
                 }
             }
             .cv-card--methods{
+                margin:15px;
             }
             .cv-card--history{
+                margin:15px;
             }
             .cv-card--personalData {
+                margin:15px;
             }
         }
     }

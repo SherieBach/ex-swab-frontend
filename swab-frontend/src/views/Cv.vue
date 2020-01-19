@@ -1,6 +1,6 @@
 <template>
     <div id="Cv">
-        <router-link to="/">HOMEPAGE</router-link>
+        <router-link to="/">BACK TO HOMEPAGE</router-link>
         <CurriculumContent/>
     </div>
 </template>

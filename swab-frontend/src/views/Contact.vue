@@ -1,9 +1,9 @@
 <template>
     <div id="contact">
-        <h2>Contact page</h2>
+        <h2>Contact us</h2>
         <div class="contact-content">
             <h2>{{this.getAllContent.companyName}}</h2>
-            <span>Contact us <a href="mailto:admin@softwarelse.se">@softwarelse</a> </span>
+            <span>Contact us <a href="mailto:admin@softwarelse.se">@ softwarelse</a></span>
         </div>
     </div>
 </template>
@@ -51,10 +51,12 @@
             color: $aquaWhite;
             text-align: left;
             padding: 20px;
+            margin-top: 40px;
 
             span, a {
                 text-transform: uppercase;
                 color: $aquaWhite;
+                text-decoration: none;
             }
         }
     }
