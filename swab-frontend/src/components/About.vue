@@ -4,8 +4,11 @@
             <h1>About us</h1>
         </div>
         <div class="about-content">
-            <div v-for="item in this.getAllContent.companyDescription.paragraphs"> <!-- adding a v-for directive to loop out the paragraphs-->
-                <p>{{item}}</p>
+            <div v-for="item in this.getAllContent.companyDescription.paragraphs">
+                <!-- adding a v-for directive to loop out the paragraphs-->
+                <span>{{item}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. </span>
             </div>
         </div>
     </div>
@@ -50,14 +53,10 @@
     }
 
     .about-content {
-        height: 150px;
+        height: auto;
         width: auto;
         color: $aquaWhite;
         text-align: left;
-        border-top-style: groove;
-        border-bottom-style: groove;
-        border-width: thin;
-        border-color: $aquaWhite;
         padding: 20px;
     }
 
