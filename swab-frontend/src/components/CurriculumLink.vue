@@ -34,7 +34,7 @@
             ...mapActions([
                 'loadSingleCvFromJson',
             ]),
-            handleHoverIn() {
+            handleHoverIn() { // transition for hovering over the cv box container - enlarges it for view only (desktop)
                 this.bgWidth = 500;
 
             },

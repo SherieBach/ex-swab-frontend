@@ -81,7 +81,7 @@
         transform-origin: 100% 50%;
     }
 
-    .burger-button:hover .burger-bar--img {
+    .burger-button .burger-bar--img {
         transform: scaleX(1);
     }
 

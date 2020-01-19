@@ -11,9 +11,6 @@
                 <li>
                     <router-link to="/contact">Contact</router-link>
                 </li>
-             <!--   <li>
-                    <router-link to="/startown">Start own</router-link>
-                </li>-->
                 <li>
                     <router-link :to="{ hash: '#consultants_block'}">Consultants</router-link>
                 </li>

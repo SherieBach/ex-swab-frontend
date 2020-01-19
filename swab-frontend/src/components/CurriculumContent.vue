@@ -109,7 +109,7 @@
     @import "../styles/global";
 
     #cv {
-        @include flex($flexWrap: wrap, $justify: space-between);
+        @include flex($justify: space-between);
         margin: 0;
         color: $aquaWhite;
         background-color: $black;
