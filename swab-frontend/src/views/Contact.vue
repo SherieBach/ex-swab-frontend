@@ -34,8 +34,8 @@
     @import "../styles/global";
 
     #contact {
-        @include flex($flexDir: column, $justify: space-around);
 
+        @include flex($flexDir: column, $justify: space-around);
 
         h2 {
             color: $aquaWhite;
@@ -45,12 +45,11 @@
         }
 
         .contact-content {
+            @include border();
             height: 150px;
             width: auto;
             color: $aquaWhite;
             text-align: left;
-            border: 1px solid grey;
-            border-radius: 5px;
             padding: 20px;
 
             span, a {

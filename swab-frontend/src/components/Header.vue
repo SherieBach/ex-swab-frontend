@@ -7,37 +7,16 @@
             </div>
             <SideBar class="sideBar-component">
                 <div class="header-logo--holder">
-                <img src="../assets/images/softwarelse.png" class="header-logo--thumbnail" alt="Softwarelse logotype">
+                <img src="../assets/images/softwarelse.svg" class="header-logo--thumbnail" alt="Softwarelse logotype">
                 </div>
                 <ul class="sidebar-links">
-                    <router-link to="/">
-                        <li>
-                            Home
-                        </li>
-                    </router-link>
-                    <router-link to="/career">
-                        <li>
-                            Career
-                        </li>
-                    </router-link>
-                    <router-link to="/contact">
-                        <li>
-                            Contact
-                        </li>
-                    </router-link>
-                    <router-link to="/startown">
-                        <li>
-                            Start own
-                        </li>
-                    </router-link>
-                    <router-link :to="{ hash:'#consultants_block'}">
-                        <li>
-                            Consultants
-                        </li>
+                    <router-link v-for="routes in links"
+                                 v-bind:key="routes.id"
+                                 :to="`${routes.page}`"> <li @click="closeSidebar">{{routes.text}}</li>
                     </router-link>
                 </ul>
             </SideBar>
-            <img src="../assets/images/softwarelse.png" class="header-logo" alt="Softwarelse logotype">
+            <img src="../assets/images/softwarelse.svg" class="header-logo" alt="Softwarelse logotype">
             <img src="../assets/images/mouse-alt2.png" class="header-mouse mouse-animate"
                  alt="Advisory image of a mouse referring to scroll">
         </div>
@@ -47,6 +26,7 @@
 <script>
     import Bar from "./mobile-menu/Bar";
     import SideBar from "./mobile-menu/SideBar";
+    import store from "../store/modules/content";
 
     export default {
         name: 'Header',
@@ -57,9 +37,40 @@
         data() {
             return {
                 isOpen: false,
+                links: [
+                    {
+                        id: 0,
+                        text: 'Home',
+                        page:'/'
+                    },
+                    {
+                        id: 2,
+                        text: 'Career',
+                        page:'/career'
+                    },
+                    {
+                        id: 3,
+                        text: 'Contact',
+                        page:'/contact'
+                    },
+                    {
+                        id: 4,
+                        text: 'Start own',
+                        page:'/startown'
+                    },
+                    {
+                        id: 5,
+                        text: 'Consultants',
+                        page:'/curriculum'
+                    }
+                ]
             }
         },
-        methods: {}
+        methods: {
+            closeSidebar(){
+                store.mutations.toggleNav();
+            }
+        }
     }
 </script>
 <style scoped lang="scss">
@@ -101,10 +112,6 @@
                     top: -28px;
                     left: 5px;
                     margin-left: 10px;
-                    color: $aquaWhite;
-                    text-transform: uppercase;
-                    mix-blend-mode: luminosity;
-
                 }
             }
 
@@ -120,8 +127,7 @@
             }
 
             .header-menu {
-                display: flex;
-                justify-content: flex-end;
+                @include flex($justify: flex-end);
                 padding: 0.5rem 0.8rem;
                 z-index: 5;
 
@@ -144,12 +150,8 @@
                     border-color: $aquaWhite;
                     padding: 10px 0 10px 40px;
                 }
-
-                li:hover {
-                    background-color: rgba(171, 180, 211, 0.3);
-                    color: black;
-                }
             }
+
 
             .header-mouse {
                 position: absolute;
@@ -176,7 +178,7 @@
                 }
 
                 &.header-mouse {
-                    animation: bounce 0.8s;
+                    animation: bounce 0.6s;
                     animation-direction: alternate;
                     animation-iteration-count: infinite;
                 }
@@ -197,7 +199,6 @@
                 left: 48px;
                 width: 80%;
                 height: auto;
-                mix-blend-mode: luminosity;
 
                 @include md {
                     top: 225px;
@@ -217,5 +218,6 @@
                 }
             }
         }
+
     }
 </style>
