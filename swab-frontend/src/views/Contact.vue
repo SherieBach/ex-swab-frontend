@@ -1,9 +1,9 @@
 <template>
     <div id="contact">
-        <h2>Contact page</h2>
+        <h2>Contact us</h2>
         <div class="contact-content">
             <h2>{{this.getAllContent.companyName}}</h2>
-            <span>Contact us <a href="mailto:admin@softwarelse.se">@softwarelse</a> </span>
+            <span>Contact us <a href="mailto:admin@softwarelse.se">@ softwarelse</a></span>
         </div>
     </div>
 </template>
@@ -34,8 +34,8 @@
     @import "../styles/global";
 
     #contact {
-        @include flex($flexDir: column, $justify: space-around);
 
+        @include flex($flexDir: column, $justify: space-around);
 
         h2 {
             color: $aquaWhite;
@@ -45,17 +45,18 @@
         }
 
         .contact-content {
+            @include border();
             height: 150px;
             width: auto;
             color: $aquaWhite;
             text-align: left;
-            border: 1px solid grey;
-            border-radius: 5px;
             padding: 20px;
+            margin-top: 40px;
 
             span, a {
                 text-transform: uppercase;
                 color: $aquaWhite;
+                text-decoration: none;
             }
         }
     }

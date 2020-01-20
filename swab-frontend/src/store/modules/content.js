@@ -8,8 +8,8 @@ const state = {
 const mutations = {
     setData: (state, content) => (state.allContent = content),
     setCvData: (state, cvData) => (state.cvContent = cvData),
-    setIsNavOpen: (state) => (state.isNavOpen = state),
-    toggleNav() { state.isNavOpen = !state.isNavOpen; }
+    setIsNavOpen: (state) => (state.isNavOpen = state), // sets and defines the state -
+    toggleNav() { state.isNavOpen = !state.isNavOpen; }  // setting the state to true whenever the panel is open with method inside Sidebar component
 };
 
 const actions = {

@@ -1,10 +1,13 @@
 <template>
     <div id="career">
-<h2>This is career page</h2>
+        <h2>Work with us</h2>
         <div class="career-content">
-            <div v-for="item in this.getAllContent.companyDescription.paragraphs"> <!-- adding a v-for directive to loop out the paragraphs-->
-                <p>{{item}}</p>
-            </div>
+            <h3> Ready to spread your wings?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
         </div>
     </div>
 </template>
@@ -14,21 +17,6 @@
 
     export default {
         name: 'Career',
-        methods: {
-            ...mapActions([
-                'loadAllJSONContent',
-            ])
-        },
-        computed: {
-            ...mapGetters([
-                'getAllContent'
-            ])
-        },
-        created() {
-            console.log("calling json content ", this.getAllContent);
-            this.loadAllJSONContent(); // calling the action from store to get all content
-
-        }
     }
 </script>
 <style scoped lang="scss">
@@ -36,10 +24,10 @@
     @import "../styles/global";
 
     #career {
-        display: flex;
-        justify-content: space-around;
+        @include flex($justify: space-around);
         flex-direction: column;
         margin: auto;
+
         h2 {
             color: $aquaWhite;
             font-size: 2em;
@@ -48,13 +36,12 @@
         }
 
         .career-content {
-            height: 150px;
-            width: auto;
+            @include border();
+            height: auto;
             color: $aquaWhite;
             text-align: left;
-            border: 1px solid grey;
-            border-radius: 5px;
             padding: 20px;
+            margin: 40px 10px 0 10px;
         }
     }
 </style>

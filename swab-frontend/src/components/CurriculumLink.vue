@@ -1,6 +1,6 @@
 <template>
-    <div id="cvLink">  <!-- adding a linked component for each CV and rerouting it, searchable URL tweaked by comp-->
-        <h1 id="consultants_block">Our consultants</h1>
+    <div id="cvLink">  <!-- adding a linked component for each CV and rerouting it, searchable URL tweaked by comp -->
+        <h1 id="consultants_block">consultants</h1>
         <div v-if="this.getCVContent" class="cvLink-card hoverOn" :style="{ width:bgWidth + 'px' }">
             <router-link :to="{
             name: 'curriculum',
@@ -9,7 +9,7 @@
             }">
                 <div class="cvLink-card--profile ">
                 <div @mouseover="handleHoverIn"
-                     @mouseout="handleHoverOut">
+                     @mouseout="handleHoverOut"> <!-- Desktop on mouse over expand and align text on right side & click for rerouting-->
                     <img src="../assets/images/gabriel.jpg" alt="Thumbnail photo of the consultant">
                 </div>
                     <h2>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h2>
@@ -27,19 +27,19 @@
         name: 'CurriculumLink',
         data() {
             return {
-                bgWidth: 300,
+                bgWidth: 400,
             }
         },
         methods: {
             ...mapActions([
                 'loadSingleCvFromJson',
             ]),
-            handleHoverIn() {
-                this.bgWidth = 500;
+            handleHoverIn() { //  enlarges it for view only (desktop)
+                this.bgWidth = 600;
 
             },
             handleHoverOut() {
-                this.bgWidth = 300;
+                this.bgWidth = 400;
             }
         },
         computed: {
@@ -58,18 +58,21 @@
 
     #cvLink {
         @include flex($flexDir: column);
+        flex-wrap: wrap;
+
     }
 
     h1 {
         color: $aquaWhite;
         text-align: center;
         padding: 15px;
+        text-transform: uppercase;
     }
 
     .cvLink-card {
         margin: 10px;
         padding: 10px;
-        width: 300px;
+        width: 400px;
         height: 250px;
         overflow: hidden;
 
@@ -94,7 +97,7 @@
             height: auto;
         }
         .cvLink-card--intro {
-
+            text-align: right;
         }
 
     }

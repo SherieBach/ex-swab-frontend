@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <Header/>
+
         <Navigation :class="styleNav"/> <!-- // not complete, for navigation bar depending on viewpoints-->
         <transition
                 name="fade"
@@ -11,12 +12,13 @@
         >                                   <!-- transition for fade during page routing --->
             <router-view/>
         </transition>
-
+<Footer />
     </div>
 </template>
 <script>
     import Header from "./components/Header.vue";
     import Navigation from "./components/Navigation";
+    import Footer from "./components/Footer";
 
     export default {
         name: 'app',
@@ -26,6 +28,7 @@
             }
         },
         components: {
+            Footer,
             Navigation,
             Header,
 

@@ -8,13 +8,12 @@
  border-color: $aquaWhite;
 }
 
-@mixin flex($flexDir: row, $justify: center, $align: center, $flow: row, $flexWrap: wrap) {
+@mixin flex($flexDir: row, $justify: center, $align: center, $flow: row) {
  display: flex;
  flex-flow: $flow ;
  flex-direction: $flexDir;
  justify-content: $justify;
  align-items: $align;
- flex-wrap: $flexWrap;
 }
 
 @mixin sm {

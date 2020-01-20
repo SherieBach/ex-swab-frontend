@@ -3,7 +3,7 @@
         <div class="sidebar-backdrop" @click="closeSidebar" v-if="isPanelOpen"></div>
         <transition name="slide">
             <div v-if="isPanelOpen"
-                 class="sidebar-panel">
+                 class="sidebar-panel"> <!-- check if the panel is open -->
                 <slot></slot>
             </div>
         </transition>
@@ -22,12 +22,12 @@
                 'isNavOpen'
             ]),
             isPanelOpen(){
-                return store.state.isNavOpen;
+                return store.state.isNavOpen; // returns the state to store
             }
         },
         methods: {
             closeSidebar(){
-                store.mutations.toggleNav();
+                store.mutations.toggleNav(); // checks the state mutation if the nav is open and toggles
             }
         }
     }

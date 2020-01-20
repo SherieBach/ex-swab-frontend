@@ -1,17 +1,13 @@
 <template>
     <div id="home" v-on:scroll="handleScroll" :class="{'fadeIn scrollAnimation': handledScroll}">
-
         <About/>
         <CurriculumLink/>
-        <Footer/>
     </div>
 </template>
 
 <script>
-    // @ is an alias to /src
     import CurriculumLink from "../components/CurriculumLink";
     import About from "../components/About";
-    import Footer from "../components/Footer";
     import Navigation from "../components/Navigation";
 
     export default {
@@ -24,7 +20,6 @@
             },
         components: {
             Navigation,
-            Footer,
             About,
             CurriculumLink // note to self used to be consultants
         },
