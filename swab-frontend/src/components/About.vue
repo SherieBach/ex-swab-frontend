@@ -45,6 +45,10 @@
         @include flex($flexDir: column);
         margin: 60px 10px 40px 10px;
         background-color: $black;
+        border-bottom: 1px #040c2b solid;
+        border-bottom-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+        box-shadow: 1px 14px 6px -6px rgba(133, 147, 204, .2);
     }
 
     h1 {
@@ -55,7 +59,6 @@
     }
 
     .about-content {
-        @include border();
         height: auto;
         color: $aquaWhite;
         text-align: left;
