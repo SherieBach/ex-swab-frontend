@@ -43,7 +43,8 @@
 
     #about {
         @include flex($flexDir: column);
-        margin: 60px 10px 40px 10px;
+        @include border();
+        margin: 60px 30px 60px 30px;
         background-color: $black;
     }
 
@@ -55,7 +56,6 @@
     }
 
     .about-content {
-        @include border();
         height: auto;
         color: $aquaWhite;
         text-align: left;

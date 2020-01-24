@@ -59,8 +59,8 @@
     #cvLink {
         @include flex($flexDir: column);
         flex-wrap: wrap;
-
     }
+
 
     h1 {
         color: $aquaWhite;
@@ -75,6 +75,7 @@
         width: 400px;
         height: 250px;
         overflow: hidden;
+
 
         a {
             color: $aquaWhite;

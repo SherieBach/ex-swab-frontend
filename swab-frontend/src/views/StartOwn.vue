@@ -21,7 +21,8 @@
 
     #contact {
         @include flex($justify: space-around , $flexDir: column);
-        margin: auto;
+        margin: 60px 10px 40px 10px;
+
 
         h2 {
             color: $aquaWhite;

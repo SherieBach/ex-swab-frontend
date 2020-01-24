@@ -1,19 +1,27 @@
 <template>
-    <div id="nav">
+    <div id="nav"> <!--underline hover on mousdeover animate-->
         <nav>
             <ul>
-                <li>
-                    <router-link to="/">Home</router-link>
-                </li>
-                <li>
-                    <router-link to="/career">Career</router-link>
-                </li>
-                <li>
-                    <router-link to="/contact">Contact</router-link>
-                </li>
-                <li>
-                    <router-link :to="{ hash: '#consultants_block'}">Consultants</router-link>
-                </li>
+                <router-link to="/">
+                    <li>
+                        Home
+                    </li>
+                </router-link>
+                <router-link to="/career">
+                    <li>
+                        Career
+                    </li>
+                </router-link>
+                <router-link to="/contact">
+                    <li>
+                        Contact
+                    </li>
+                </router-link>
+                <router-link :to="{ hash: '#consultants_block'}">
+                    <li>
+                        Consultants
+                    </li>
+                </router-link>
             </ul>
         </nav>
     </div>
@@ -34,16 +42,8 @@
         position: relative;
         font-size: 1.5em;
         color: $aquaWhite;
+        margin: 60px 0 60px 0;
 
-        .fade-enter-active, .fade-leave-active {
-            transition: opacity .5s;
-        }
-
-        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-        {
-            opacity: 0;
-            min-height: 100%;
-        }
 
         nav {
             @include sm {
@@ -60,22 +60,27 @@
                 padding: 0;
                 margin: 0 20px 0 0;
 
-                li {
-                    padding: 2px 20px;
-
-
-                    a {
-                        font-weight: bold;
-                        color: $aquaWhite;
-                        background-size: 100% 100%;
-                        text-decoration: none;
-                        cursor: pointer;
-
-                        &.router-link-exact-active {
-                            text-decoration: underline;
-                        }
-
-                    }
+                a {
+                    position:relative;
+                    font-weight: bolder;
+                    color: $aquaWhite;
+                    text-decoration: none;
+                    letter-spacing: 0.25em;
+                    cursor: pointer;
+                    padding: 15px 0;
+                }
+                a::after {
+                    position: absolute;
+                    content:'';
+                    width:0;
+                    height:1px;
+                    background:$aquaWhite;
+                    left: 0;
+                    bottom:0;
+                    transition: 0.5s ease-in;
+                }
+                a:hover::after {
+                    width:100%;
                 }
             }
         }

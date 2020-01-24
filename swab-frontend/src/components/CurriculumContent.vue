@@ -110,10 +110,11 @@
 
     #cv {
         @include flex($justify: space-between);
-        margin: 0;
         color: $aquaWhite;
         background-color: $black;
         text-decoration: none;
+        margin: 60px 10px 40px 10px;
+
 
         h2, h3, h4 {
             text-decoration: underline;
