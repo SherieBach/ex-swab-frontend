@@ -7,12 +7,11 @@
             </div>
             <SideBar class="sideBar-component">
                 <div class="header-logo--holder">
-                <img src="../assets/images/softwarelse.svg" class="header-logo--thumbnail" alt="Softwarelse logotype">
                 </div>
                 <ul class="sidebar-links">
                     <router-link v-for="routes in links"
                                  v-bind:key="routes.id"
-                                 :to="`${routes.page}`"> <li @click="closeSidebar">{{routes.text}}</li>
+                                 :to="`${routes.page}`" > <li @click="closeSidebar">{{routes.text}}</li>
                     </router-link>
                 </ul>
             </SideBar>
@@ -22,7 +21,6 @@
         </div>
     </div>
 </template>
-
 <script>
     import Bar from "./mobile-menu/Bar";
     import SideBar from "./mobile-menu/SideBar";
@@ -73,6 +71,7 @@
         }
     }
 </script>
+
 <style scoped lang="scss">
 
     @import "../styles/global";
@@ -105,13 +104,14 @@
                 position: relative;
 
 
-                .header-logo--thumbnail {
-                    width: 150px;
-                    height: auto;
+                .header-btn--thumbnail {
                     position: absolute;
-                    top: -28px;
-                    left: 5px;
+                    width: auto;
+                    height: auto;
+                    top: -25px;
+                    left: 133px;
                     margin-left: 10px;
+
                 }
             }
 
@@ -136,22 +136,22 @@
                 }
             }
 
-            ul.sidebar-links, a {
+            .sidebar-links, a {
                 width: 100%;
                 list-style-type: none;
                 text-decoration: none;
+                letter-spacing: 0.15em;
                 color: $aquaWhite;
                 padding-left: 0;
 
+
                 li {
                     font-size: 1.3em;
-                    border-bottom-style: solid;
-                    border-width: thin;
-                    border-color: $aquaWhite;
-                    padding: 10px 0 10px 40px;
+                    padding: 10px 0 15px 40px;
                 }
-            }
 
+
+            }
 
             .header-mouse {
                 position: absolute;
@@ -172,7 +172,7 @@
                     width: 1.6em;
                 }
                 @include xl {
-                    bottom: 255px;
+                    bottom: 155px;
                     left: 800px;
                     width: 1.8em;
                 }
@@ -218,6 +218,5 @@
                 }
             }
         }
-
     }
 </style>

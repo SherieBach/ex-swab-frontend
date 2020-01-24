@@ -75,10 +75,7 @@
         width: 400px;
         height: 250px;
         overflow: hidden;
-        border-bottom: 1px #040c2b solid;
-        border-bottom-left-radius: 10%;
-        border-bottom-right-radius: 10%;
-        box-shadow: 1px 14px 6px -6px rgba(133, 147, 204, .2);
+
 
         a {
             color: $aquaWhite;

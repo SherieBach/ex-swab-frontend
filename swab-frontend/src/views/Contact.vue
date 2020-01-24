@@ -34,6 +34,7 @@
     @import "../styles/global";
 
     #contact {
+        margin: 60px 10px 40px 10px;
 
         @include flex($flexDir: column, $justify: space-around);
 

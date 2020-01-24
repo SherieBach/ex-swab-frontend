@@ -12,7 +12,7 @@
 <script>
 
 
-    import { mapMutations } from "vuex";
+    import {mapMutations} from "vuex";
     import store from "../../store/modules/content";
 
     export default {
@@ -21,12 +21,12 @@
             ...mapMutations([
                 'isNavOpen'
             ]),
-            isPanelOpen(){
+            isPanelOpen() {
                 return store.state.isNavOpen; // returns the state to store
             }
         },
         methods: {
-            closeSidebar(){
+            closeSidebar() {
                 store.mutations.toggleNav(); // checks the state mutation if the nav is open and toggles
             }
         }
@@ -35,21 +35,27 @@
 <style scoped lang="scss">
     @import "../../styles/global";
 
-    .slide-enter-active,
-    .slide-leave-active
-    {
-        transition: transform 0.2s ease;
+    .slide-enter-active {
+        transition: transform 0.5s ease;
     }
 
-    .slide-enter,
-    .slide-leave-to {
+    .slide-leave-active {
+        transition: opacity .3s;
+
+    }
+
+    .slide-enter {
         transform: translateY(-100%);
-        transition: all 150ms ease-in 0s;
+        transition: 180ms ease-in;
+    }
+
+    .slide-leave-to {
+        opacity: 0;
     }
 
     .sidebar-backdrop {
-        background-color: rgba(0,0,0,.5);
-        width: 100vw;
+        background-color: rgba(0, 0, 0, .5);
+        width: 100%;
         height: 100vh;
         position: fixed;
         top: 0;
@@ -63,7 +69,7 @@
         position: fixed;
         right: 0;
         top: 0;
-        height: 28vh;
+        height: 33vh;
         z-index: 99;
         padding: 3rem 0 2rem 0;
         width: 100%;

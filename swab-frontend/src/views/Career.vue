@@ -26,7 +26,7 @@
     #career {
         @include flex($justify: space-around);
         flex-direction: column;
-        margin: auto;
+        margin: 60px 10px 40px 10px;
 
         h2 {
             color: $aquaWhite;
