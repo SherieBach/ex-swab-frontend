@@ -61,27 +61,33 @@
                 margin: 0 20px 0 0;
 
                 a {
-                    position:relative;
+                    position: relative;
                     font-weight: bolder;
                     color: $aquaWhite;
                     text-decoration: none;
                     letter-spacing: 0.25em;
                     cursor: pointer;
                     padding: 15px 0;
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        width: 0;
+                        height: 1px;
+                        background: $aquaWhite;
+                        left: 0;
+                        bottom: 0;
+                        transition: 0.4s ease-out;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                        transition: 0.1s ease-in;
+
+                    }
                 }
-                a::after {
-                    position: absolute;
-                    content:'';
-                    width:0;
-                    height:1px;
-                    background:$aquaWhite;
-                    left: 0;
-                    bottom:0;
-                    transition: 0.5s ease-in;
-                }
-                a:hover::after {
-                    width:100%;
-                }
+
+
             }
         }
     }

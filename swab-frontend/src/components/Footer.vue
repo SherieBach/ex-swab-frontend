@@ -27,8 +27,8 @@
             ),
             url("../assets/images/joel-filipe-sm.jpg") no-repeat center;
             background-size: cover;
-            width: 110%;
-            height: 200%;
+            width: auto;
+            height: 250%;
             transform: rotate(180deg);
 
             @include md{

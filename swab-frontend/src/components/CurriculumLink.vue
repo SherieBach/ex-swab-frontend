@@ -1,22 +1,22 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
     <div id="cvLink">  <!-- adding a linked component for each CV and rerouting it, searchable URL tweaked by comp -->
         <h1 id="consultants_block">consultants</h1>
-        <div v-if="this.getCVContent" class="cvLink-card hoverOn" :style="{ width:bgWidth + 'px' }">
+
+        <div v-scrollanimation v-if="this.getCVContent" class="cvLink-card">
+            <div class="cvLink-card--profile ">
+                <div><img src="../assets/images/gabriel.jpg" alt="Thumbnail photo of the consultant"></div>
+                <h2>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h2>
+            </div>
+            <span class="cvLink-card--intro" v-for="text in this.getCVContent.cv.introText">{{text}}</span>
             <router-link :to="{
             name: 'curriculum',
             params: { name: this.getCVContent.cv.firstName +
             this.getCVContent.cv.lastName }
             }">
-                <div class="cvLink-card--profile ">
-                <div @mouseover="handleHoverIn"
-                     @mouseout="handleHoverOut"> <!-- Desktop on mouse over expand and align text on right side & click for rerouting-->
-                    <img src="../assets/images/gabriel.jpg" alt="Thumbnail photo of the consultant">
-                </div>
-                    <h2>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h2>
-                    <span class="cvLink-card--intro" v-for="text in this.getCVContent.cv.introText">{{text}}</span>
-                </div>
+                <span>...</span>
             </router-link>
         </div>
+
     </div>
 </template>
 
@@ -26,21 +26,12 @@
     export default {
         name: 'CurriculumLink',
         data() {
-            return {
-                bgWidth: 400,
-            }
+            return {}
         },
         methods: {
             ...mapActions([
                 'loadSingleCvFromJson',
-            ]),
-            handleHoverIn() { //  enlarges it for view only (desktop)
-                this.bgWidth = 600;
-
-            },
-            handleHoverOut() {
-                this.bgWidth = 400;
-            }
+            ])
         },
         computed: {
             ...mapGetters([
@@ -57,30 +48,22 @@
     @import "../styles/global";
 
     #cvLink {
-        @include flex($flexDir: column);
+        @include flex($justify: space-between, $flexDir: column);
         flex-wrap: wrap;
-    }
 
+        h1 {
+            color: $aquaWhite;
+            text-align: center;
+            padding: 15px;
+            text-transform: uppercase;
+        }
 
-    h1 {
-        color: $aquaWhite;
-        text-align: center;
-        padding: 15px;
-        text-transform: uppercase;
-    }
-
-    .cvLink-card {
-        margin: 10px;
-        padding: 10px;
-        width: 400px;
-        height: 250px;
-        overflow: hidden;
-
-
-        a {
+        a, button {
+            width: 20px;
+            height: auto;
             color: $aquaWhite;
             text-decoration: none;
-
+            text-transform: uppercase;
 
             &:hover {
                 cursor: pointer;
@@ -90,21 +73,41 @@
 
     }
 
-    .cvLink-card--profile {
-        align-content: end;
 
-        img {
-            width: 250px;
-            height: auto;
+    .cvLink-card {
+        flex: 0 1 24%; /*flex-grow is 0, flex-shrink is 1, and the width is 24%.*/
+        margin: 10px;
+        padding: 10px;
+        width: auto;
+        height: 250px;
+        overflow: hidden;
+        border: grey 1px solid;
+
+
+        .cvLink-card--profile {
+            align-content: end;
+            color: $aquaWhite;
+
+            img {
+                width: 200px;
+                height: auto;
+            }
         }
-        .cvLink-card--intro {
+
+        .cvLink-card--intro, span {
             text-align: right;
+            color: $aquaWhite;
         }
-
     }
 
-    .hoverOn {
-        transition: all 2.5s;
+    .before-enter {
+        opacity: 0;
+        transform: translateY(70px);
+        transition: all 2s ease-out;
+    }
+    .enter {
+        opacity: 1;
+        transform: translateY(0px);
     }
 
 </style>

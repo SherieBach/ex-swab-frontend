@@ -3,9 +3,10 @@
          :class="{ 'active' : isBurgerActive }"
          @click.prevent="toggle"> <!--DOM click event handler, trigger toggle-->
         <button type="button" class="burger-button" title="Menu">
+            <span class="hidden">Toggle menu</span>
             <span class="burger-bar burger-bar--1"></span>
-            <img src="../../assets/images/Bar.png" class="burger-bar--img" alt="A clickable menubar for mobile navigation">
             <span class="burger-bar burger-bar--2"></span>
+            <span class="burger-bar burger-bar--3"></span>
         </button>
     </div>
 </template>
@@ -34,65 +35,61 @@
 <style scoped lang="scss">
     @import "../../styles/global";
 
+
     button {
         cursor: pointer;
     }
 
+    /* remove blue outline */
     button:focus {
         outline: 0;
     }
 
     .burger-button {
         position: relative;
-        height: 40px;
+        height: 30px;
         width: 32px;
         display: block;
         z-index: 999;
         border: 0;
-        margin-top: 5px;
-        margin-right: 15px;
+        border-radius: 0;
         background-color: transparent;
         pointer-events: all;
-        transition: transform 1s cubic-bezier(.165, .84, .44, 1);
+        transition: transform .6s cubic-bezier(.165,.84,.44,1);
     }
 
     .burger-bar {
-        background-color: #ABB4D3;
+        background-color: $aquaWhite;
         position: absolute;
         top: 50%;
-        right: 0;
+        right: 6px;
         left: 6px;
         height: 2px;
         width: auto;
-        opacity: 0;
         margin-top: -1px;
-        transition: transform .6s cubic-bezier(.165, .84, .44, 1),
-        opacity .3s cubic-bezier(.165, .84, .44, 1),
-        background-color .6s cubic-bezier(.165, .84, .44, 1);
-        color: $aquaWhite;
+        transition: transform .6s cubic-bezier(.165,.84,.44,1),opacity .3s cubic-bezier(.165,.84,.44,1),background-color .6s cubic-bezier(.165,.84,.44,1);
     }
 
-    .burger-bar--img {
-        position: absolute;
-        top: 1%;
-        right: 16px;
-        left: 0;
-        height: 40px;
-        width: 40px;
+    .burger-bar--1 {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+    }
+
+    .burger-bar--2 {
         transform-origin: 100% 50%;
+        transform: scaleX(.8);
     }
 
-    .burger-button .burger-bar--img {
+    .burger-button:hover .burger-bar--2 {
         transform: scaleX(1);
     }
 
-    #burger.active .burger-bar--img {
-        opacity: 0;
+    .no-touchevents .burger-bar--2:hover {
+        transform: scaleX(1);
     }
 
-    #burger.active .burger-bar {
-        background-color: $aquaWhite;
-        opacity: 1;
+    .burger-bar--3 {
+        transform: translateY(6px);
     }
 
     #burger.active .burger-button {
@@ -100,10 +97,14 @@
     }
 
     #burger.active .burger-bar--1 {
-        transform: rotate(45deg);
+        transform: rotate(45deg)
     }
 
     #burger.active .burger-bar--2 {
+        opacity: 0;
+    }
+
+    #burger.active .burger-bar--3 {
         transform: rotate(-45deg)
     }
 </style>

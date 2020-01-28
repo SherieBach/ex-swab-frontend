@@ -55,7 +55,7 @@
 
     .sidebar-backdrop {
         background-color: rgba(0, 0, 0, .5);
-        width: 100%;
+        width: auto;
         height: 100vh;
         position: fixed;
         top: 0;
@@ -64,14 +64,13 @@
     }
 
     .sidebar-panel {
-        overflow-y: auto;
+        overflow: hidden;
         background-color: $black;
         position: fixed;
         right: 0;
         top: 0;
         height: 33vh;
         z-index: 99;
-        padding: 3rem 0 2rem 0;
         width: 100%;
         cursor: pointer;
     }

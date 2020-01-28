@@ -113,7 +113,7 @@
         color: $aquaWhite;
         background-color: $black;
         text-decoration: none;
-        margin: 60px 10px 40px 10px;
+        margin: 60px 0 40px 0;
 
 
         h2, h3, h4 {
