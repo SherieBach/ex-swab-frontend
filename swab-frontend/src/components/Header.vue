@@ -5,9 +5,8 @@
             <div class="header-menu">
                 <Bar/>
             </div>
-            <SideBar class="sideBar-component">
-                <div class="header-logo--holder">
-                </div>
+            <SideBar>
+                <div class="header-logo--holder"></div>
                 <ul class="sidebar-links">
                     <router-link v-for="routes in links"
                                  v-bind:key="routes.id"

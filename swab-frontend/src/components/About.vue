@@ -4,11 +4,9 @@
             <h1>About us</h1>
         </div>
         <div class="about-content">
-            <div v-for="item in this.getAllContent.companyDescription.paragraphs">
-                <!-- adding a v-for directive to loop out the paragraphs-->
+            <div v-for="item in this.getAllContent.companyDescription.paragraphs"> <!-- adding a v-for directive to loop out the paragraphs-->
                 <span>{{item}} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. </span>
+                    et dolore magna aliqua.  </span>
             </div>
         </div>
     </div>
