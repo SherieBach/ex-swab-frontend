@@ -3,7 +3,7 @@
         <div class="header-bgImage">
             <!-- Note to self; add component and set the mobile view in method -->
             <div class="header-menu">
-                <Bar/>
+                <Bar class="burger"/>
             </div>
             <SideBar>
                 <div class="header-logo--holder"></div>
@@ -133,6 +133,11 @@
                 @include md {
                     display: none;
                 }
+
+                .burger {
+                    padding: 20px 0;
+                }
+
             }
 
             .sidebar-links, a {

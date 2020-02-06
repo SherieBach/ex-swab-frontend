@@ -1,7 +1,9 @@
 <template>
     <div id="app">
+        <div class="sticky-container">
+            <StickyContact class="sticky-contact"/>
+        </div>
         <Header/>
-
         <Navigation :class="styleNav"/> <!-- // not complete, for navigation bar depending on viewpoints-->
         <transition
                 name="fade"
@@ -12,13 +14,14 @@
         >                                   <!-- transition for fade during page routing --->
             <router-view/>
         </transition>
-<Footer />
+        <Footer/>
     </div>
 </template>
 <script>
     import Header from "./components/Header.vue";
     import Navigation from "./components/Navigation";
     import Footer from "./components/Footer";
+    import StickyContact from "./components/StickyContact";
 
     export default {
         name: 'app',
@@ -28,6 +31,7 @@
             }
         },
         components: {
+            StickyContact,
             Footer,
             Navigation,
             Header,
@@ -71,10 +75,25 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: $black;
-    }
 
-    .navComponent {
-        margin: 30px;
+        .sticky-container {
+            @include flex($justify: flex-end);
+            padding: 0 10px 0 10px ;
+            overflow: hidden;
+
+
+            .sticky-content {
+                position: -webkit-sticky;
+                position: fixed;
+                bottom: 15px;
+                right: 12px;
+                z-index: 999;
+            }
+        }
+
+        .navComponent {
+            margin: 30px;
+        }
     }
 
     .fade-enter-active,

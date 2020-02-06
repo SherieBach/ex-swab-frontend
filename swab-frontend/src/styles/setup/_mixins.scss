@@ -8,12 +8,24 @@
  border-color: $aquaWhite;
 }
 
-@mixin flex($flexDir: row, $justify: center, $align: center, $flow: row) {
+@mixin flex($flexDir: row, $justify: space-between, $align: center, $flow: row, $wrap: wrap) {
  display: flex;
  flex-flow: $flow ;
  flex-direction: $flexDir;
  justify-content: $justify;
  align-items: $align;
+ flex-wrap: $wrap;
+}
+
+@mixin slideBefore(){
+ opacity: 0;
+ transform: translateY(70px);
+ transition: all 2s ease-out;
+}
+
+@mixin slideEnter() {
+ opacity: 1;
+ transform: translateY(0px);
 }
 
 @mixin sm {

@@ -1,10 +1,12 @@
 <template xmlns="http://www.w3.org/1999/html">
     <div id="cvLink">  <!-- adding a linked component for each CV and rerouting it, searchable URL tweaked by comp -->
-        <h1 id="consultants_block">consultants</h1>
+        <h1 id="consultants_block">Our consultants</h1>
 
         <div v-scrollanimation v-if="this.getCVContent" class="cvLink-card">
             <div class="cvLink-card--profile ">
-                <div><img src="../assets/images/gabriel.jpg" alt="Thumbnail photo of the consultant"></div>
+                <div>
+                    <img src="../assets/images/gabriel.jpg" alt="Thumbnail photo of the consultant">
+                </div>
                 <h2>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h2>
             </div>
             <span class="cvLink-card--intro" v-for="text in this.getCVContent.cv.introText">{{text}}</span>
@@ -13,7 +15,7 @@
             params: { name: this.getCVContent.cv.firstName +
             this.getCVContent.cv.lastName }
             }">
-                <span>...</span>
+                <span> ... read more</span>
             </router-link>
         </div>
 
@@ -58,19 +60,6 @@
             text-transform: uppercase;
         }
 
-        a, button {
-            width: 20px;
-            height: auto;
-            color: $aquaWhite;
-            text-decoration: none;
-            text-transform: uppercase;
-
-            &:hover {
-                cursor: pointer;
-            }
-
-        }
-
     }
 
 
@@ -87,10 +76,12 @@
         .cvLink-card--profile {
             align-content: end;
             color: $aquaWhite;
+            padding: 10px;
 
             img {
                 width: 200px;
                 height: auto;
+                padding: 15px;
             }
         }
 
@@ -98,16 +89,19 @@
             text-align: right;
             color: $aquaWhite;
         }
+
+        a {
+            font-style: italic;
+            text-decoration: none;
+        }
     }
 
     .before-enter {
-        opacity: 0;
-        transform: translateY(70px);
-        transition: all 2s ease-out;
+        @include slideBefore();
     }
+
     .enter {
-        opacity: 1;
-        transform: translateY(0px);
+        @include slideEnter
     }
 
 </style>

@@ -13,7 +13,6 @@
 </template>
 
 <script>
-    import {mapActions, mapGetters} from 'vuex';
 
     export default {
         name: 'Career',
@@ -26,7 +25,7 @@
     #career {
         @include flex($justify: space-around);
         flex-direction: column;
-        margin: 60px 10px 40px 10px;
+        margin: 40px 10px 40px 10px;
 
         h2 {
             color: $aquaWhite;

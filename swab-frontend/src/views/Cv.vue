@@ -22,7 +22,7 @@
         width: 100%;
         height: auto;
         text-align: center;
-        margin: 60px 10px 40px 10px;
+        margin: 40px 10px 40px 10px;
 
 
         a {

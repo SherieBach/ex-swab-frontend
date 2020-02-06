@@ -21,7 +21,7 @@
 
     #contact {
         @include flex($justify: space-around , $flexDir: column);
-        margin: 60px 10px 40px 10px;
+        margin: 40px 10px 40px 10px;
 
 
         h2 {
