@@ -3,7 +3,6 @@
          :class="{ 'active' : isBurgerActive }"
          @click.prevent="toggle"> <!--DOM click event handler, trigger toggle-->
         <button type="button" class="burger-button" title="Menu">
-            <span class="hidden">Toggle menu</span>
             <span class="burger-bar burger-bar--1"></span>
             <span class="burger-bar burger-bar--2"></span>
             <span class="burger-bar burger-bar--3"></span>
@@ -48,7 +47,7 @@
     .burger-button {
         position: relative;
         height: 30px;
-        width: 32px;
+        width: 42px;
         display: block;
         z-index: 999;
         border: 0;
@@ -64,15 +63,15 @@
         top: 50%;
         right: 6px;
         left: 6px;
-        height: 2px;
+        height: 3px;
         width: auto;
         margin-top: -1px;
         transition: transform .6s cubic-bezier(.165,.84,.44,1),opacity .3s cubic-bezier(.165,.84,.44,1),background-color .6s cubic-bezier(.165,.84,.44,1);
     }
 
     .burger-bar--1 {
-        -webkit-transform: translateY(-6px);
-        transform: translateY(-6px);
+        -webkit-transform: translateY(-10x);
+        transform: translateY(-10px);
     }
 
     .burger-bar--2 {
@@ -89,7 +88,7 @@
     }
 
     .burger-bar--3 {
-        transform: translateY(6px);
+        transform: translateY(10px);
     }
 
     #burger.active .burger-button {
