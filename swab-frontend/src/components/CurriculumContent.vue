@@ -9,13 +9,13 @@
                 <p v-for="text in this.getCVContent.cv.introText">{{text}}</p>
             </div>
             <div class="cv-card--comp">
-                <h2>Key competencies</h2>
+                <h3>Key competencies</h3>
                 <ul v-for="competence in this.getCVContent.cv.keyCompetencies">
                     <li>{{competence}}</li>
                 </ul>
             </div>
             <div class="cv-card--skills">
-                <h2>Skills</h2>
+                <h3>Skills</h3>
                 <div v-for="skill in this.getCVContent.cv.skills">
                     <h4>{{skill.category}}</h4>
                     <ul v-for="skillName in skill.bulletPoints">
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="cv-card--techs">
-                <h2>TECHNOLOGIES</h2>
+                <h3>TECHNOLOGIES</h3>
                 <table>
                     <tr v-for="tech in this.getCVContent.cv.technologies">
                         <th>{{tech.category}}</th>
@@ -35,16 +35,17 @@
                 </table>
             </div>
             <div class="cv-card--methods">
-                <h2>METHODOLOGIES</h2>
+                <h3>METHODOLOGIES</h3>
                 <div>
                     <span> {{this.getCVContent.cv.methodologies.join(", ")}}</span>
                 </div>
             </div>
             <div class="cv-card--history">
-                <h2>Employment history</h2>
+                <h1>Employment history</h1>
                 <div v-for="company in this.getCVContent.cv.workExperience">
 <!--                    <h4>{{company.contractVia}}</h4>-->
 <!--                    <span v-for="time in company.timespan"> {{time.month}} {{" - " +time.year}}</span>  removed atm-->
+                    <img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-image-missing-icon.png">
                     <h3>{{company.companyInfo.name}}</h3>
                     <h4>The company</h4>
                     <span>{{company.companyInfo.description}}</span>
@@ -127,7 +128,7 @@
             text-align: left;
 
             h3 {
-                font-size: 1.5em;
+                font-size: 1.4em;
             }
 
             img {
@@ -190,6 +191,10 @@
             }
             .cv-card--history{
                 margin:15px;
+                img {
+                    width: 50px;
+                    height: auto;
+                }
             }
             .cv-card--personalData {
                 margin:15px;
