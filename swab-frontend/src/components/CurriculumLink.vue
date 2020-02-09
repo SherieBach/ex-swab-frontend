@@ -1,4 +1,4 @@
-<template xmlns="http://www.w3.org/1999/html">
+<template>
     <div id="cvLink">  <!-- adding a linked component for each CV and rerouting it, searchable URL tweaked by comp -->
         <h1 id="consultants_block">Our consultants</h1>
 
