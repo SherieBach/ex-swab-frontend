@@ -43,19 +43,25 @@
             <div class="cv-card--history">
                 <h1>Employment history</h1>
                 <div v-for="company in this.getCVContent.cv.workExperience">
-<!--                    <h4>{{company.contractVia}}</h4>-->
-<!--                    <span v-for="time in company.timespan"> {{time.month}} {{" - " +time.year}}</span>  removed atm-->
-                    <img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-image-missing-icon.png">
-                    <h3>{{company.companyInfo.name}}</h3>
+                    <div>
+                        <img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-image-missing-icon.png">
+                    </div>
+                    <span class="cv-card--history_title">{{company.companyInfo.name + " "}} </span>
+                    <span class="cv-card--history_contractVia"> Assigned by {{company.contractVia + " "}}</span>
+                    <span>{{renderMonths(company.timespan.from.month, 'eng') + " " + company.timespan.from.year + " - "}}</span>
+                    <span v-if="company.timespan.to">{{company.timespan.to.month + " " + company.timespan.to.year}}</span>
+                    <span v-else> now </span>
                     <h4>The company</h4>
                     <span>{{company.companyInfo.description}}</span>
                     <h3>My roles</h3>
-                    <span>{{company.roles[0]}}</span>
+                    <span v-for="role in company.roles">{{role}}</span>
                     <h3>Technical environment</h3>
-                    <span>{{company.technicalEnvironment[0]}}</span>
-                    <h3>Achievement Highlights</h3>
-                    <div v-for="achievements in company.achievementHighlights">
-                        <p>{{achievements}}</p>
+                    <span v-for="techs in company.technicalEnvironment">{{techs + ", "}}</span>
+                    <div v-if="company.achievementHighlights ">
+                        <h3>Achievement Highlights</h3>
+                        <div v-for="achievements in company.achievementHighlights">
+                            <p>{{achievements}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,15 +96,61 @@
 
     export default {
         name: 'CurriculumContent',
+        data() {
+            return {
+                months: {
+                    eng: [
+                        'January',
+                        'February',
+                        'Mars',
+                        'April',
+                        'May',
+                        'June',
+                        'July',
+                        'August',
+                        'September',
+                        'October',
+                        'November',
+                        'December',
+                    ],
+                    swe: [
+                        'Januari',
+                        'Februari',
+                        'Mars',
+                        'April',
+                        'Maj',
+                        'Juni',
+                        'Juli',
+                        'Augusti',
+                        'September',
+                        'Oktober',
+                        'November',
+                        'December',
+                    ],
+                }
+            }
+        },
         methods: {
             ...mapActions([
                 'loadSingleCvFromJson', // loading up the action from store
-            ])
+            ]),
+            renderMonths(number, lang) {
+                if (lang === 'eng') {
+                    return this.months.eng[number - 1];
+                } else if (lang === 'swe') {
+                    return this.months.swe[number - 1];
+                }
+            }
         },
         computed: {
             ...mapGetters([
                 'getCVContent' // adding the getter for rendering the data
-            ])
+            ]),
+
+        },
+        mounted() {
+            this.renderMonths();
+
         },
         created() {
             console.log("calling json content ", this.getCVContent);
@@ -137,15 +189,17 @@
                 height: auto;
                 padding: 20px;
             }
-            .cv-card--header{
-                margin:15px;
+
+            .cv-card--header {
+                margin: 15px;
             }
+
             .cv-card--intro {
-                margin:15px;
+                margin: 15px;
             }
 
             .cv-card--comp {
-                margin:15px;
+                margin: 15px;
 
                 ul {
                     li {
@@ -154,12 +208,14 @@
                 }
 
             }
+
             .cv-card--skills {
-                margin:15px;
+                margin: 15px;
             }
 
             .cv-card--techs {
-                margin:15px;
+                margin: 15px;
+
                 table {
                     border-collapse: collapse;
                     table-layout: fixed;
@@ -186,18 +242,32 @@
                     }
                 }
             }
-            .cv-card--methods{
-                margin:15px;
+
+            .cv-card--methods {
+                margin: 15px;
             }
-            .cv-card--history{
-                margin:15px;
+
+            .cv-card--history {
+                margin: 15px;
+
+                .cv-card--history_contractVia {
+                    color: #abb4d3cf;
+                }
+
                 img {
                     width: 50px;
                     height: auto;
                 }
+
+                .cv-card--history_title {
+                    font-weight: bolder;
+                    font-size: 1.6em;
+                    text-decoration: underline;
+                }
             }
+
             .cv-card--personalData {
-                margin:15px;
+                margin: 15px;
             }
         }
     }
