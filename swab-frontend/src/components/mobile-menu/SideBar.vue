@@ -57,7 +57,6 @@
         background-color: rgba(0, 0, 0, .5);
         width: auto;
         height: 100vh;
-        position: fixed;
         top: 0;
         right: 0;
 
@@ -69,7 +68,7 @@
         position: fixed;
         right: 0;
         top: 0;
-        height: 33vh;
+        height: auto;
         z-index: 99;
         width: 100%;
         cursor: pointer;
