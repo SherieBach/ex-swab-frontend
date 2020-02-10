@@ -1,16 +1,16 @@
 <template>
     <div id="sticky">
         <div class="sticky-content">
-            <router-link to="/contact">
+            <a href="mailto:admin@softwarelse.se">
                 <img src="../assets/images/mail.svg">
-            </router-link>
+            </a>
         </div>
 
     </div>
 </template>
 <script>
     export default {
-        name: 'StickyContact'
+        name: 'StickyContact',
     }
 </script>
 <style scoped lang="scss">
