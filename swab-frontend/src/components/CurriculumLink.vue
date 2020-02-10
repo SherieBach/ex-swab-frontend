@@ -101,7 +101,7 @@
 
 
         .cvLink-card--profile {
-            flex: 0 0 50%;
+            flex: 0 0 80%;
             padding: 10px;
             max-width: 350px;
             color: $aquaWhite;
