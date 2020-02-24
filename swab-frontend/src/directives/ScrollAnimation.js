@@ -1,5 +1,5 @@
 const animatedScrollObserver = new IntersectionObserver(
-    (entries, animatedScrollObserver) => { // callback-func for checking if the target is set on right el
+    (entries, animatedScrollObserver) => { // callback-func for checking if the target is set on right element
         entries.forEach((entry) => { // check with a condition if all entries is in the curr viewport
             if (entry.isIntersecting) {// respectively IF the entry is intersecting with the viewport
                 entry.target.classList.add('enter'); // and target the el with the specific class

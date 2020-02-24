@@ -22,12 +22,12 @@
                 'isNavOpen'
             ]),
             isPanelOpen() {
-                return store.state.isNavOpen; // returns the state to store
+                return store.state.isOpen; // returns the state to store
             }
         },
         methods: {
             closeSidebar() {
-                store.mutations.toggleNav(); // checks the state mutation if the nav is open and toggles
+                store.mutations.toggle(); // checks the state mutation if the nav is open and toggles
             }
         }
     }

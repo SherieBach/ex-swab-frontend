@@ -18,15 +18,15 @@
         name: 'Bar',
         computed: {
             ...mapMutations([
-                'setIsNavOpen'
+                'setIsOpen'
             ]),
             isBurgerActive() {
-                return store.state.isNavOpen; // checking the and returning the state whenever the bar is clicked
+                return store.state.isOpen; // checking the and returning the state whenever the bar is clicked
             }
         },
         methods: {
             toggle() {
-                store.mutations.toggleNav(); // sets the mutated state to true
+                store.mutations.toggle(); // sets the mutated state to true
             }
         }
     }
