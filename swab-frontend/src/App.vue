@@ -85,7 +85,7 @@
             .sticky-content {
                 position: -webkit-sticky;
                 position: fixed;
-                bottom: 15px;
+                top: 15px;
                 right: 12px;
                 z-index: 999;
             }
