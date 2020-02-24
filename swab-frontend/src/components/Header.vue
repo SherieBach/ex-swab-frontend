@@ -2,20 +2,22 @@
     <div id="header">
         <div class="header-bgImage">
             <!-- Note to self; add component and set the mobile view in method -->
+            <h1 class="title">Consulting with goals of expanding</h1>
             <div class="header-menu">
                 <Bar class="burger"/>
             </div>
             <SideBar>
                 <div class="header-logo--holder"></div>
-                <ul class="sidebar-links">
+                <ul v-scrollanimation class="sidebar-links">
                     <router-link v-for="routes in links"
                                  v-bind:key="routes.id"
-                                 :to="`${routes.page}`" > <li @click="closeSidebar">{{routes.text}}</li>
+                                 :to="`${routes.page}`">
+                        <li @click="closeSidebar">{{routes.text}}</li>
                     </router-link>
                 </ul>
             </SideBar>
-            <img src="../assets/images/softwarelse.svg" class="header-logo" alt="Softwarelse logotype">
-            <img src="../assets/images/mouse-alt2.png" class="header-mouse mouse-animate"
+            <img src="../assets/images/softwarelse_bright.svg" class="header-logo" alt="Softwarelse logotype">
+            <img src= "../assets/images/mouse-alt2.png" class="header-mouse mouse-animate"
                  alt="Advisory image of a mouse referring to scroll">
         </div>
     </div>
@@ -38,34 +40,34 @@
                     {
                         id: 0,
                         text: 'Home',
-                        page:'/'
+                        page: '/'
                     },
                     {
                         id: 2,
                         text: 'Career',
-                        page:'/career'
+                        page: '/career'
                     },
                     {
                         id: 3,
                         text: 'Contact',
-                        page:'/contact'
+                        page: '/contact'
                     },
                     {
                         id: 4,
                         text: 'Start own',
-                        page:'/startown'
+                        page: '/startown'
                     },
                     {
                         id: 5,
                         text: 'Consultants',
-                        page:'/curriculum'
+                        page: '/curriculum'
                     }
                 ]
             }
         },
         methods: {
-            closeSidebar(){
-                store.mutations.toggleNav();
+            closeSidebar() {
+                store.mutations.toggle();
             }
         }
     }
@@ -74,6 +76,17 @@
 <style scoped lang="scss">
 
     @import "../styles/global";
+
+    .before-enter {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1.5s ease-out;
+    }
+
+    .enter{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 
     div#header {
         position: relative;
@@ -117,7 +130,7 @@
             @include lg {
                 background: linear-gradient(
                                 180deg, rgba(2, 0, 36, 0.024247198879551846) 40%,
-                                rgba(0, 0, 0, 0.9878326330532213) 92%
+                                rgba(0, 0, 0, 0.9878326330532213) 79%
                 ),
                 url("../assets/images/joel-filipe-_AjqGGafofE-unsplash 2@x2.jpg") no-repeat center;
                 background-size: cover;
@@ -125,8 +138,25 @@
                 height: 100%;
             }
 
+            .title {
+              display: none;
+
+                @include lg {
+                    display: block;
+                    color: $aquaWhite;
+                    font-size: 3.5rem;
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                    margin-top: 0;
+                    position: absolute;
+                    bottom:380px;
+                    left:400px;
+                }
+            }
+
             .header-menu {
-                @include flex($justify: flex-end);
+                display: flex;
+                justify-content: flex-end;
                 padding: 0.5rem 0.8rem;
                 z-index: 5;
 
@@ -205,20 +235,20 @@
                 height: auto;
 
                 @include md {
-                    top: 225px;
+                    top: 300px;
                     left: 200px;
                     width: 50%;
                 }
 
                 @include lg {
-                    top: 270px;
-                    left: 233px;
-                    width: 55%;
+                    top: 10px;
+                    left: 5px;
+                    width: 25%;
                 }
                 @include xl {
-                    top: 390px;
-                    left: 500px;
-                    width: 40%;
+                    top: 10px;
+                    left: 5px;
+                    width: 25%;
                 }
             }
         }
