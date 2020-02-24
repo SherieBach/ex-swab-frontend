@@ -43,25 +43,32 @@
             <div class="cv-card--history">
                 <h1>Employment history</h1>
                 <div v-for="company in this.getCVContent.cv.workExperience">
-                    <div>
-                        <img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-image-missing-icon.png">
-                    </div>
-                    <span class="cv-card--history_title">{{company.companyInfo.name + " "}} </span>
-                    <span class="cv-card--history_contractVia"> Assigned by {{company.contractVia + " "}}</span>
-                    <span>{{renderMonths(company.timespan.from.month, 'eng') + " " + company.timespan.from.year + " - "}}</span>
-                    <span v-if="company.timespan.to">{{company.timespan.to.month + " " + company.timespan.to.year}}</span>
-                    <span v-else> now </span>
-                    <h4>The company</h4>
-                    <span>{{company.companyInfo.description}}</span>
-                    <h3>My roles</h3>
-                    <span v-for="role in company.roles">{{role}}</span>
-                    <h3>Technical environment</h3>
-                    <span v-for="techs in company.technicalEnvironment">{{techs + ", "}}</span>
-                    <div v-if="company.achievementHighlights ">
-                        <h3>Achievement Highlights</h3>
-                        <div v-for="achievements in company.achievementHighlights">
-                            <p>{{achievements}}</p>
+                    <div v-bind:class="{ active: company.companyInfo.name === activeCompanyName }" class="company-name">
+                        <div @click="toggleHistoryDetail(company.companyInfo.name)">
+                            <img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Status-image-missing-icon.png"
+                                 class="company-logo">
+                            <span class="cv-card--history_title">{{company.companyInfo.name + " "}} </span>
+                            <span class="cv-card--history_contractVia"> Assigned by {{company.contractVia + " "}}</span>
                         </div>
+                        <transition name="fade">
+                            <div v-if="activeCompanyName === company.companyInfo.name">
+                                <span>{{renderMonths(company.timespan.from.month, 'eng') + " " + company.timespan.from.year + " - "}}</span>
+                                <span v-if="company.timespan.to">{{company.timespan.to.month + " " + company.timespan.to.year}}</span>
+                                <span v-else> now </span>
+                                <h4>The company</h4>
+                                <span>{{company.companyInfo.description}}</span>
+                                <h3>My roles</h3>
+                                <span v-for="role in company.roles">{{role}}</span>
+                                <h3>Technical environment</h3>
+                                <span v-for="techs in company.technicalEnvironment">{{techs + ", "}}</span>
+                                <div v-if="company.achievementHighlights ">
+                                    <h3>Achievement Highlights</h3>
+                                    <div v-for="achievements in company.achievementHighlights">
+                                        <p>{{achievements}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </transition>
                     </div>
                 </div>
             </div>
@@ -98,6 +105,7 @@
         name: 'CurriculumContent',
         data() {
             return {
+                activeCompanyName: "",
                 months: {
                     eng: [
                         'January',
@@ -134,13 +142,20 @@
             ...mapActions([
                 'loadSingleCvFromJson', // loading up the action from store
             ]),
+            toggleHistoryDetail(companyName) {
+                if (this.activeCompanyName === companyName) { // sets the company name to the active one
+                    this.activeCompanyName = null;
+                } else {
+                    this.activeCompanyName = companyName;
+                }
+            },
             renderMonths(number, lang) {
                 if (lang === 'eng') {
                     return this.months.eng[number - 1];
                 } else if (lang === 'swe') {
                     return this.months.swe[number - 1];
                 }
-            }
+            },
         },
         computed: {
             ...mapGetters([
@@ -250,9 +265,14 @@
             .cv-card--history {
                 margin: 15px;
 
+                .company-logo {
+                    padding: 0;
+                }
+
                 .cv-card--history_contractVia {
                     color: #abb4d3cf;
                 }
+
 
                 img {
                     width: 50px;
@@ -270,5 +290,12 @@
                 margin: 15px;
             }
         }
+    }
+
+    .fade-enter-active, .fade-leave-active {
+    }
+
+    .fade-enter, .fade-leave-to {
+
     }
 </style>

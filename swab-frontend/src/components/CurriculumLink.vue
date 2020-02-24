@@ -4,48 +4,48 @@
             <h1>Our consultants</h1>
         </header>
         <main v-if="this.getCVContent" class="cvLink-card--container">
-                <article v-scrollanimation class="cvLink-card--profile ">
-                    <div class="column">
-                        <img src="../assets/images/gabriel.jpg" alt="Thumbnail photo of Gabriel Klappenbach">
-                        <h2>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h2>
-                        <p class="title">CEO & Founder</p>
-                        <div class="cvLink-card--profile_icons">
-                            <a href="https://twitter.com/gabbah79"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/in/gabrielklappenbach/"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </div>
-                        <div>
+            <article v-scrollanimation class="cvLink-card--profile ">
+                <div class="column">
+                    <img src="../assets/images/gabriel.jpg" alt="Thumbnail photo of Gabriel Klappenbach">
+                    <h2>{{this.getCVContent.cv.firstName + " " + this.getCVContent.cv.lastName}}</h2>
+                    <p class="title">CEO & Founder</p>
+                    <div class="cvLink-card--profile_icons">
+                        <a href="https://twitter.com/gabbah79"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/gabrielklappenbach/"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <div>
                             <span class="cvLink-card--intro"
                                   v-for="text in this.getCVContent.cv.introText">{{text}}</span>
-                            <router-link :to="{
+                        <router-link :to="{
             name: 'curriculum',
             params: { name: this.getCVContent.cv.firstName +
             this.getCVContent.cv.lastName }
             }">
-                                <span> ... read more</span>
-                            </router-link>
-                        </div>
-                    </div>
-                </article>
-                <!-- start of ex profile-->
-                <article v-scrollanimation class="cvLink-card--profile extra-profile ">
-                    <div class="column">
-                        <img src="../assets/images/blank-profile.png" alt="Thumbnail photo of Gabriel Klappenbach">
-                        <h2>Johan Kjölhede</h2>
-                        <p class="title">CEO & Founder</p>
-                        <div class="cvLink-card--profile_icons">
-                            <a href="https://twitter.com/gigurra"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/in/johan-kj%C3%B6lhede-a763b76a/"><i
-                                    class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </div>
-                        <div>
-                            <span class="cvLink-card--intro">Software Engineer and Systems Architect Consultant at Samtrans</span>
                             <span> ... read more</span>
-                        </div>
+                        </router-link>
                     </div>
-                </article>
-                <!--end of ex profile-->
+                </div>
+            </article>
+            <!-- start of ex profile-->
+            <article v-scrollanimation class="cvLink-card--profile extra-profile ">
+                <div class="column">
+                    <img src="../assets/images/blank-profile.png" alt="Thumbnail photo of Gabriel Klappenbach">
+                    <h2>Johan Kjölhede</h2>
+                    <p class="title">CEO & Founder</p>
+                    <div class="cvLink-card--profile_icons">
+                        <a href="https://twitter.com/gigurra"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/johan-kj%C3%B6lhede-a763b76a/"><i
+                                class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <div>
+                        <span class="cvLink-card--intro">Software Engineer and Systems Architect Consultant at Samtrans</span>
+                        <span> ... read more</span>
+                    </div>
+                </div>
+            </article>
+            <!--end of ex profile-->
         </main>
     </div>
 </template>
@@ -138,6 +138,9 @@
             button:hover, a:hover {
                 opacity: 0.7;
             }
+        }
+        .extra-profile {
+
         }
     }
 
