@@ -10,31 +10,24 @@
                     et dolore magna aliqua.  </span>
             </div>
         </div>
-        <div class="about-services">
+        <div class="about-company_logos">
 
-            <div class="about-services--top">
-                <div v-scrollanimation class="about-services-skillbase column">
-                    <h3>Accessibility</h3>
-                    <span>Adept knowledge of back-end programming security, language and framework</span>
-                    <img src="../assets/images/gearDesktop.svg" class="laptop-image">
+            <div v-scrollanimation class="about-services--top">
+                <div class="about-services-skillbase column">
+                    <img src="https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
+                         class="klarna-image">
                 </div>
-                <div v-scrollanimation class="about-services-backend column">
-                    <h3>Manage & hosting</h3>
-                    <span>Ability to administrate database as well as handling scaling application</span>
-                    <img src="../assets/images/DBcloud.svg" class="db-image">
+                <div class="about-services-backend column">
+                    <img src="../assets/images/company-logos/magine.png" class="magine-image">
                 </div>
             </div>
 
             <div v-scrollanimation class="about-services--bottom">
                 <div class="about-services-workflow column">
-                    <h3>Agile environment</h3>
-                    <span>Over 15 years of agile work method experience</span>
-                    <img src="../assets/images/agile.svg" class="agile-image">
+                    <img src="../assets/images/company-logos/Spotify_Icon_RGB_Green.png" class="spotify-image">
                 </div>
-                <div v-scrollanimation  class="about-services-git column">
-                    <h3>Version control</h3>
-                    <span>Experience with version control such as GIT and more</span>
-                    <img src="../assets/images/git.svg" class="git-image">
+                <div class="about-services-git column">
+                    <img src="../assets/images/company-logos/dagensN.jpg" class="dn-image">
                 </div>
             </div>
 
@@ -70,104 +63,125 @@
 
 
     #about {
-        margin: 60px 0 60px 0;
-        background-color: $black;
-    }
-
-    h1 {
-        margin-top: 40px;
-        color: $aquaWhite;
-        text-align: center;
-        text-transform: uppercase;
-    }
-
-    .about-content {
-        @include border();
-        height: auto;
-        color: $aquaWhite;
-        text-align: left;
-        padding: 20px 0 20px 0;
-        margin: 33px;
-    }
-
-    .about-services {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-wrap: wrap;
-        text-align: center;
-        width: auto;
-        padding: 20px 0 20px 0;
-        margin: 35px 0 35px 0;
+        margin: 0;
+        background: black;
 
-        .column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0 20px 0;
-            width: 300px;
-            height: auto;
+        @include md {
+            background: #0e0e0e;
+
         }
 
-        span {
+        h1 {
             color: $aquaWhite;
-        }
-
-        h3 {
-            color: $aquaWhite;
+            text-align: center;
             text-transform: uppercase;
-            font-weight: bolder;
-            letter-spacing: 0.1em;
+            margin: 0;
         }
 
-        .about-services--top {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex-wrap: wrap;
+        .about-content {
+            height: auto;
+            color: $aquaWhite;
+            text-align: left;
+            padding: 20px;
+            margin: 33px;
+            border: solid #171717 3px;
+            background: #06121d;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 0 15px 1px rgba(0, 0, 0, 1);
+            -moz-box-shadow: 0 0 15px 1px rgba(0, 0, 0, 1);
+            box-shadow: 0 0 15px 1px rgba(0, 0, 0, 1);
+
+            @include md {
+                width: 940px;
+            }
+            @include lg {
+                width: 1260px;
+
+            }
+
+        }
+
+        .about-company_logos {
+            text-align: center;
+            width: auto;
             padding: 20px 0 20px 0;
+            margin: 35px 0 35px 0;
+            background: black;
 
-
-            .laptop-image {
-                width: 150px;
-                height: auto;
-                padding: 15px;
+            @include md {
+                background: #0F0F0F;
             }
 
-            .db-image {
-                width: 100px;
+            .column {
+                padding: 20px 0 20px 0;
+                width: 300px;
                 height: auto;
-                padding: 15px;
-
-            }
-        }
-
-        .about-services--bottom {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0 20px 0;
-
-
-            .agile-image {
-                width: 150px;
-                height: auto;
-                padding: 15px;
-
             }
 
-            .git-image {
-                width: 100px;
-                height: auto;
-                padding: 15px;
+            span {
+                color: $aquaWhite;
             }
-        }
-        .before-enter {
-            @include slideBefore();
-        }
 
-        .enter {
-            @include slideEnter
+            h3 {
+                color: $aquaWhite;
+                text-transform: uppercase;
+                font-weight: bolder;
+                letter-spacing: 0.1em;
+            }
+
+            .about-services--top {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 20px 0 20px 0;
+
+
+                .klarna-image {
+                    width: 250px;
+                    height: auto;
+                    padding: 15px;
+                }
+
+                .magine-image {
+                    width: 150px;
+                    height: auto;
+                    padding: 15px;
+
+                }
+            }
+
+            .about-services--bottom {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0 20px 0;
+
+
+                .spotify-image {
+                    width: 150px;
+                    height: auto;
+                    padding: 15px;
+
+                }
+
+                .dn-image {
+                    width: 180px;
+                    height: auto;
+                    padding: 15px;
+                }
+            }
+
+            .before-enter {
+                @include slideBefore();
+            }
+
+            .enter {
+                @include slideEnter
+            }
         }
     }
-
 </style>

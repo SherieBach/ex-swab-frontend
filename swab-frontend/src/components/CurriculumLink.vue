@@ -90,6 +90,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background: $black;
+
+            @include md{
+                background: #0F0F0F;
+
+            }
         }
     }
 
@@ -98,6 +104,12 @@
         flex-wrap: wrap;
         align-items: stretch;
         justify-content: space-around;
+        background: $black;
+
+        @include md{
+            background: #0F0F0F;
+
+        }
 
 
         .cvLink-card--profile {
@@ -105,12 +117,22 @@
             padding: 10px;
             max-width: 350px;
             color: $aquaWhite;
-            border: 1px solid $aquaWhite;
+           border: 3px #171717 solid;
+            background: rgb(27, 27, 27);
             margin: 25px 0 25px 0;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 0 15px 1px rgba(0,0,0,1);
+            -moz-box-shadow: 0 0 15px 1px rgba(0,0,0,1);
+            box-shadow: 0 0 15px 1px rgba(0,0,0,1);
+
+            @include md {
+                /*background: #171717;*/
+            }
 
             img {
 
                 width: 100%;
+                border-radius: 10px;
             }
 
             .cvLink-card--profile_icons {
@@ -138,9 +160,6 @@
             button:hover, a:hover {
                 opacity: 0.7;
             }
-        }
-        .extra-profile {
-
         }
     }
 
