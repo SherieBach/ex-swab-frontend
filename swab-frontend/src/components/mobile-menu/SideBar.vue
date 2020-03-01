@@ -11,16 +11,12 @@
 </template>
 <script>
 
-
-    import {mapMutations} from "vuex";
     import store from "../../store/modules/content";
 
     export default {
         name: 'SideBar',
+        props: ['activeSidebar'],
         computed: {
-            ...mapMutations([
-                'isNavOpen'
-            ]),
             isPanelOpen() {
                 return store.state.isOpen; // returns the state to store
             }

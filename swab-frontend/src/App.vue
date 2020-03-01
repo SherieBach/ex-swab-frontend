@@ -3,8 +3,8 @@
         <div class="sticky-container">
             <StickyContact class="sticky-contact"/>
         </div>
-        <Header/>
         <Navigation :class="styleNav"/> <!-- // not complete, for navigation bar depending on viewpoints-->
+        <Header/>
         <transition
                 name="fade"
                 mode="out-in"
@@ -63,7 +63,7 @@
     @import "styles/global";
 
     body, html {
-        background-color: $black;
+        background: #0e0e0e;
         margin: 0;
         font-size: $font-size;
         height: auto;
@@ -74,7 +74,12 @@
         font-family: $font-stack;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: $black;
+        background: black;
+
+        @include md {
+            background: #0e0e0e;
+
+        }
 
         .sticky-container {
             @include flex($justify: flex-end);
@@ -92,7 +97,11 @@
         }
 
         .navComponent {
-            margin: 30px;
+            margin: 0;
+            display: none;
+            @include md {
+                display: block;
+            }
         }
     }
 

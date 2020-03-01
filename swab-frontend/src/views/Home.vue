@@ -1,6 +1,8 @@
 <template>
     <div id="home" v-on:scroll="handleScroll" :class="{'fadeIn scrollAnimation': handledScroll}">
+        <div v-scrollanimation>
         <About/>
+        </div>
         <CurriculumLink/>
     </div>
 </template>
@@ -45,6 +47,14 @@
     #home {
         margin: 0;
 
+    }
+
+    .before-enter {
+        @include slideBefore();
+    }
+
+    .enter {
+        @include slideEnter
     }
 
 </style>
