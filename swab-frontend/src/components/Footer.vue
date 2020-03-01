@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-    <div class="footer-bgImage"></div>
+        <div class="footer-bgImage"></div>
     </div>
 </template>
 
@@ -15,7 +15,8 @@
     @import "../styles/global";
 
     #footer {
-        width: 100%;
+        background: rgb(26, 25, 26,1);
+                 width: 100%;
         margin: 0;
         padding: 0;
         height: 15vh;
@@ -31,15 +32,10 @@
             height: 250%;
             transform: rotate(180deg);
 
-            @include md{
-                height: 200%;
-                width: auto;
-            }
-            @include lg {
-                height: 200%;
-                width: auto;
-            }
+            @include md {
+                display: none;
 
+            }
         }
     }
 

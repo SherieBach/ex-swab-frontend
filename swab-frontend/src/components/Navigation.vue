@@ -40,25 +40,49 @@
 
     #nav {
         position: relative;
-        font-size: 1.5em;
         color: $aquaWhite;
-        margin: 60px 0 60px 0;
 
+
+        @include lg {
+
+            margin: 0 0 60px 0;
+        }
 
         nav {
-            @include sm {
-                display: none;
-            }
-            @include lg {
+            display: none;
+
+            @include md {
                 display: block;
             }
 
-
             ul {
-                @include flex($justify: space-evenly);
+                display: flex;
+                justify-content: space-around;
                 list-style: none;
                 padding: 0;
-                margin: 0 20px 0 0;
+                margin: 0;
+                position: absolute;
+                top: 45px;
+                right: 0;
+                z-index: 999;
+                font-size: 1em;
+
+                @include lg { //992
+                    top: 55px;
+                    font-size: 1.2em;
+                }
+
+                @include xl { //1200
+                    top: 60px;
+                    font-size: 1.4em;
+                }
+
+                @include xxl { //1400
+                    top: 65px;
+                    right: 10px;
+                    font-size: 1.5em;
+                }
+
 
                 a {
                     position: relative;
@@ -68,6 +92,7 @@
                     letter-spacing: 0.25em;
                     cursor: pointer;
                     padding: 15px 0;
+                    margin-right: 35px;
 
                     &::after {
                         position: absolute;
@@ -84,6 +109,17 @@
                         width: 100%;
                         transition: 0.1s ease-in;
 
+                    }
+
+                    @include lg {
+                        margin-left: 30px;
+
+                    }
+                    @include xl {
+                        margin-left: 35px;
+                    }
+                    @include xxl {
+                        margin-left: 65px;
                     }
                 }
 

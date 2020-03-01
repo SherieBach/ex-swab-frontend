@@ -1,10 +1,9 @@
 <template>
     <div id="app">
         <div class="sticky-container">
-            <StickyContact class="sticky-contact"/>
         </div>
-        <Header/>
         <Navigation :class="styleNav"/> <!-- // not complete, for navigation bar depending on viewpoints-->
+        <Header/>
         <transition
                 name="fade"
                 mode="out-in"
@@ -21,7 +20,6 @@
     import Header from "./components/Header.vue";
     import Navigation from "./components/Navigation";
     import Footer from "./components/Footer";
-    import StickyContact from "./components/StickyContact";
 
     export default {
         name: 'app',
@@ -31,7 +29,6 @@
             }
         },
         components: {
-            StickyContact,
             Footer,
             Navigation,
             Header,
@@ -63,7 +60,7 @@
     @import "styles/global";
 
     body, html {
-        background-color: $black;
+        background: #0e0e0e;
         margin: 0;
         font-size: $font-size;
         height: auto;
@@ -74,25 +71,19 @@
         font-family: $font-stack;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: $black;
+        background: black;
 
-        .sticky-container {
-            @include flex($justify: flex-end);
-            padding: 0 10px 0 10px ;
-            overflow: hidden;
+        @include md {
+            background: #0e0e0e;
 
-
-            .sticky-content {
-                position: -webkit-sticky;
-                position: fixed;
-                bottom: 15px;
-                right: 12px;
-                z-index: 999;
-            }
         }
 
         .navComponent {
-            margin: 30px;
+            margin: 0;
+            display: none;
+            @include md {
+                display: block;
+            }
         }
     }
 
