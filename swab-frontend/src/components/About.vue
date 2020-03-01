@@ -14,23 +14,9 @@
 
             <div v-scrollanimation class="about-services--top">
                 <div class="about-services-skillbase column">
-                    <img src="https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
-                         class="klarna-image">
-                </div>
-                <div class="about-services-backend column">
-                    <img src="../assets/images/company-logos/magine.png" class="magine-image">
+                    <span>LOGOS</span>
                 </div>
             </div>
-
-            <div v-scrollanimation class="about-services--bottom">
-                <div class="about-services-workflow column">
-                    <img src="../assets/images/company-logos/Spotify_Icon_RGB_Green.png" class="spotify-image">
-                </div>
-                <div class="about-services-git column">
-                    <img src="../assets/images/company-logos/dagensN.jpg" class="dn-image">
-                </div>
-            </div>
-
         </div>
     </div>
 </template>
@@ -105,6 +91,7 @@
         }
 
         .about-company_logos {
+            position: relative;
             text-align: center;
             width: auto;
             padding: 20px 0 20px 0;
@@ -115,14 +102,13 @@
                 background: #0F0F0F;
             }
 
-            .column {
-                padding: 20px 0 20px 0;
-                width: 300px;
-                height: auto;
-            }
-
             span {
-                color: $aquaWhite;
+                position: absolute;
+                top: 40%;
+                right: 40%;
+                color: $black;
+                font-weight: bolder;
+                text-align: center;
             }
 
             h3 {
@@ -139,41 +125,14 @@
                 flex-wrap: wrap;
                 padding: 20px 0 20px 0;
 
-
-                .klarna-image {
+                .column {
                     width: 250px;
-                    height: auto;
-                    padding: 15px;
-                }
-
-                .magine-image {
-                    width: 150px;
-                    height: auto;
-                    padding: 15px;
+                    height: 250px;
+                    background-color: #ABB4D3;
 
                 }
             }
 
-            .about-services--bottom {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0 20px 0;
-
-
-                .spotify-image {
-                    width: 150px;
-                    height: auto;
-                    padding: 15px;
-
-                }
-
-                .dn-image {
-                    width: 180px;
-                    height: auto;
-                    padding: 15px;
-                }
-            }
 
             .before-enter {
                 @include slideBefore();
