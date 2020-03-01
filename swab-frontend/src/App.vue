@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <div class="sticky-container">
-            <StickyContact class="sticky-contact"/>
         </div>
         <Navigation :class="styleNav"/> <!-- // not complete, for navigation bar depending on viewpoints-->
         <Header/>
@@ -21,7 +20,6 @@
     import Header from "./components/Header.vue";
     import Navigation from "./components/Navigation";
     import Footer from "./components/Footer";
-    import StickyContact from "./components/StickyContact";
 
     export default {
         name: 'app',
@@ -31,7 +29,6 @@
             }
         },
         components: {
-            StickyContact,
             Footer,
             Navigation,
             Header,
@@ -79,21 +76,6 @@
         @include md {
             background: #0e0e0e;
 
-        }
-
-        .sticky-container {
-            @include flex($justify: flex-end);
-            padding: 0 10px 0 10px ;
-            overflow: hidden;
-
-
-            .sticky-content {
-                position: -webkit-sticky;
-                position: fixed;
-                top: 15px;
-                right: 12px;
-                z-index: 999;
-            }
         }
 
         .navComponent {
